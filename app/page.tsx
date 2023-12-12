@@ -76,8 +76,8 @@ export default function Home() {
             .map((post, i) => {
               return (
                 <div key={i} className="mb-4">
-                  <Link href={`${post.href}`} className="link">
-                    {post.title}
+                  <Link href={'posts/darkmode'} className="link">
+                    {post.title}       {post.href}
                   </Link>
                   <p className="mt-0.5 text-sm text-gray-11">
                     {post.description}  
@@ -85,7 +85,8 @@ export default function Home() {
                 </div>
               );
             })}
-          <Link href="/writing" className="link inline-block text-gray-11">
+          {/* <Link href="/writing" className="link inline-block text-gray-11"> */}
+          <Link href="/posts/darkmode" className="link inline-block text-gray-11">
             ...
           </Link>
         </div>
