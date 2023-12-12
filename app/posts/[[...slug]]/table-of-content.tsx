@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import throttle from 'lodash.throttle';
-import { useEffect, useState } from 'react';
+import throttle from "lodash.throttle";
+import { useEffect, useState } from "react";
 
-import { type TOCSection } from '~/libs/mdx';
-import { cn } from '~/libs/utils';
+import { type TOCSection } from "~/libs/mdx";
+import { cn } from "~/libs/utils";
 
 export default function TableOfContent({ toc }: { toc: TOCSection[] }) {
   const { currentSectionSlug } = useTocScroll(toc);
@@ -18,8 +18,8 @@ export default function TableOfContent({ toc }: { toc: TOCSection[] }) {
         <li key={i} className="flex">
           <a
             className={cn(
-              'transition-colors hover:text-tx',
-              currentSectionSlug === section.slug && 'font-medium text-tx',
+              "transition-colors hover:text-tx",
+              currentSectionSlug === section.slug && "font-medium text-tx"
             )}
             href={`#${section.slug}`}
           >
@@ -42,7 +42,7 @@ const useTocScroll = (tableOfContents: TOCSection[]) => {
 
     const onResize = () => {
       headings = Array.from(
-        document.querySelectorAll<HTMLElement>('.mdx h2'),
+        document.querySelectorAll<HTMLElement>(".mdx h2")
       ).map((element) => ({
         id: element.id,
         top: element.offsetTop,
@@ -51,8 +51,8 @@ const useTocScroll = (tableOfContents: TOCSection[]) => {
       pageTop = parseFloat(
         window
           .getComputedStyle(document.documentElement)
-          .getPropertyValue('--page-top')
-          .match(/[\d.]+/)?.[0] ?? '0',
+          .getPropertyValue("--page-top")
+          .match(/[\d.]+/)?.[0] ?? "0"
       );
     };
 
@@ -67,17 +67,16 @@ const useTocScroll = (tableOfContents: TOCSection[]) => {
           current = headings[i].id;
         }
       }
-
       setCurrentSectionSlug(current);
     }, 300);
 
     onResize();
     onScroll();
-    window.addEventListener('scroll', onScroll, { capture: true });
-    window.addEventListener('resize', onResize, { capture: true });
+    window.addEventListener("scroll", onScroll, { capture: true });
+    window.addEventListener("resize", onResize, { capture: true });
     return () => {
-      window.removeEventListener('scroll', onScroll, { capture: true });
-      window.removeEventListener('resize', onResize, { capture: true });
+      window.removeEventListener("scroll", onScroll, { capture: true });
+      window.removeEventListener("resize", onResize, { capture: true });
     };
   }, [tableOfContents]);
 

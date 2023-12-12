@@ -1,16 +1,17 @@
-import '~/styles/mdx.css';
+import "~/styles/mdx.css";
 
-import { allDocuments, type DocumentTypes } from 'contentlayer/generated';
-import { compareAsc, format } from 'date-fns';
-import { type Metadata } from 'next';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { allDocuments, type DocumentTypes } from "contentlayer/generated";
+import { compareAsc, format } from "date-fns";
+import { type Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
-import { Mdx } from '~/components/mdx-components';
-import NavHeader from '~/components/nav-header';
-import { parseToc } from '~/libs/mdx';
+import { Mdx } from "~/components/mdx-components";
+import { Giscus } from "~/components/giscus";
+import NavHeader from "~/components/nav-header";
+import { parseToc } from "~/libs/mdx";
 
-import TableOfContent from './table-of-content';
+import TableOfContent from "./table-of-content";
 
 interface PageProps {
   params: {
@@ -19,15 +20,15 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  return allDocuments.map(({ slug }) => ({ slug: slug.split('/') }));
+  return allDocuments.map(({ slug }) => ({ slug: slug.split("/") }));
 }
 
 function getDocFromParams({ params }: PageProps) {
-  const slug = params.slug.join('/');
+  const slug = params.slug.join("/");
   const post = allDocuments.find((doc) => doc.slug === slug);
 
   if (post) {
-    post.date = format(new Date(post.date), 'MMMM dd. yyyy');
+    post.date = format(new Date(post.date), "MMMM dd. yyyy");
   }
 
   return post;
@@ -49,10 +50,10 @@ export function generateMetadata({ params }: PageProps): Metadata {
       title: post.title,
       description: post.description,
       images: [
-        'https://user-images.githubusercontent.com/65283190/262063367-a7407bba-09a0-420a-ae45-2ed3e6f3e3b8.png',
+        "https://user-images.githubusercontent.com/65283190/262063367-a7407bba-09a0-420a-ae45-2ed3e6f3e3b8.png",
       ],
-      locale: 'ko_KR',
-      type: 'website',
+      locale: "ko_KR",
+      type: "website",
     },
   };
 }
@@ -148,6 +149,7 @@ export default function WritingPage({ params }: PageProps) {
             </Link>
           )}
         </footer>
+        <Giscus />
       </main>
     </>
   );

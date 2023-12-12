@@ -3,54 +3,54 @@ import {
   defineDocumentType,
   type FieldDefs,
   makeSource,
-} from 'contentlayer/source-files';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeExternalLinks from 'rehype-external-links';
-import rehypePrettyCode from 'rehype-pretty-code';
-import rehypeSlug from 'rehype-slug';
-import remarkBreaks from 'remark-breaks';
-import remarkGfm from 'remark-gfm';
+} from "contentlayer/source-files";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeExternalLinks from "rehype-external-links";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import remarkBreaks from "remark-breaks";
+import remarkGfm from "remark-gfm";
 
-import { parseSlug } from './libs/mdx';
+import { parseSlug } from "./libs/mdx";
 
 const fields: FieldDefs = {
-  title: { type: 'string', required: true },
-  description: { type: 'string', required: true },
-  image: { type: 'string' },
-  date: { type: 'date', required: true },
-  draft: { type: 'boolean' },
-  tags: { type: 'list', of: { type: 'string' } },
+  title: { type: "string", required: true },
+  description: { type: "string", required: true },
+  image: { type: "string" },
+  date: { type: "date", required: true },
+  draft: { type: "boolean" },
+  tags: { type: "list", of: { type: "string" } },
 };
 
 const computedFields: ComputedFields = {
   slug: {
-    type: 'string',
+    type: "string",
     resolve: parseSlug,
   },
   href: {
-    type: 'string',
+    type: "string",
     resolve: (doc) => `/posts/${parseSlug(doc)}`,
   },
 };
 
 export const Writing = defineDocumentType(() => ({
-  name: 'Writing',
+  name: "Writing",
   filePathPattern: `writing/**/*.mdx`,
-  contentType: 'mdx',
+  contentType: "mdx",
   fields,
   computedFields,
 }));
 
 export const Note = defineDocumentType(() => ({
-  name: 'Note',
+  name: "Note",
   filePathPattern: `note/**/*.mdx`,
-  contentType: 'mdx',
+  contentType: "mdx",
   fields,
   computedFields,
 }));
 
 export default makeSource({
-  contentDirPath: 'posts',
+  contentDirPath: "posts",
   documentTypes: [Writing, Note],
   mdx: {
     remarkPlugins: [remarkGfm, remarkBreaks],
@@ -59,24 +59,24 @@ export default makeSource({
       [
         rehypeAutolinkHeadings,
         {
-          behavior: 'wrap',
+          behavior: "wrap",
           properties: {
-            className: ['anchor'],
-            ariaLabel: 'anchor',
+            className: ["anchor"],
+            ariaLabel: "anchor",
           },
         },
       ],
       [
         rehypeExternalLinks,
         {
-          target: '_blank',
-          rel: ['noopener noreferrer'],
+          target: "_blank",
+          rel: ["noopener noreferrer"],
         },
       ],
       [
         rehypePrettyCode,
         {
-          theme: 'css-variables',
+          theme: "material-theme-palenight",
         },
       ],
     ],
