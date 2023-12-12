@@ -78,7 +78,7 @@ export default function Home() {
             .map((post, i) => {
               return (
                 <div key={i} className="mb-4">
-                  <Link href={`${process.env.NODE_ENV === 'production' ? `https://imchanyo.github.io${post.href}` : `https://imchanyo.github.io${post.href}`}` } className="link">
+                  <Link href={`${process.env.NODE_ENV === 'production' ? `https://imchanyo.github.io${post.href}/` : `https://imchanyo.github.io${post.href}`}` } className="link">
                     {post.title}        {`https://imchanyo.github.io${post.href}`}
                   </Link>
                   <p className="mt-0.5 text-sm text-gray-11">
