@@ -79,7 +79,7 @@ export default function Home() {
               return (
                 <div key={i} className="mb-4">
                   <Link href={`${process.env.NODE_ENV === 'production' ? `https://imchanyo.github.io${post.href}/` : `https://imchanyo.github.io${post.href}`}` } className="link">
-                    {post.title}        {`https://imchanyo.github.io${post.href}`}
+                    {post.title}     
                   </Link>
                   <p className="mt-0.5 text-sm text-gray-11">
                     {post.description}  

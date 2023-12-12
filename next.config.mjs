@@ -3,7 +3,7 @@ import { withContentlayer } from 'next-contentlayer';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  trailingSlash: true,
+  trailingSlash: false,
   swcMinify: true,
   basePath : process.env.NODE_ENV === 'production' ? "/imchanyo.github.io" : "",
   output: 'export',
