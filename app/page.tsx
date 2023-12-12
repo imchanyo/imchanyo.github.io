@@ -9,6 +9,8 @@ import {
 import { filterDraft, sortDateDesc } from '~/libs/mdx';
 
 export default function Home() {
+
+ 
   return (
     <main className="text-tx">
       <h1 className="mb-7 font-serif font-semibold">김찬영 ﹒ chanyoung</h1>
@@ -65,7 +67,7 @@ export default function Home() {
           <span className="ml-px text-[6px] leading-tight">(이력서)</span>
         </Link>
       </div>
-
+      
       <div data-animate data-animate-stage={3} className="mt-12 flex gap-8">
         <div className="w-80">
           <h2 className="mb-4 font-serif text-gray-11">나의 서재</h2>
@@ -76,8 +78,8 @@ export default function Home() {
             .map((post, i) => {
               return (
                 <div key={i} className="mb-4">
-                  <Link href={post.href} className="link">
-                    {post.title}       {post.href}
+                  <Link href={`${process.env.NODE_ENV === 'production' ? `https://imchanyo.github.io${post.href}` : post.href}` } className="link">
+                    {post.title}       
                   </Link>
                   <p className="mt-0.5 text-sm text-gray-11">
                     {post.description}  
