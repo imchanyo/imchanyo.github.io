@@ -76,11 +76,11 @@ export default function Home() {
             .map((post, i) => {
               return (
                 <div key={i} className="mb-4">
-                  <Link href={post.href} className="link">
+                  <Link href={`/${post.href}`} className="link">
                     {post.title}
                   </Link>
                   <p className="mt-0.5 text-sm text-gray-11">
-                    {post.description}
+                    {post.description}  
                   </p>
                 </div>
               );
