@@ -2,6 +2,7 @@
   "name": "chanyoung.me",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://imchanyo.github.io/",
   "scripts": {
     "dev": "contentlayer dev & next dev",
     "build": "next build && next export",
