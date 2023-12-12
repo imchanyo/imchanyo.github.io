@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://imchan.github.io/about/
+Sitemap: https://imchan.github.io/about//sitemap.xml
