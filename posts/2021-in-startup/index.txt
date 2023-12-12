@@ -1,5 +1,5 @@
 1:HL["https://imchanyo.github.io/_next/static/css/a5a00f3a0cf07b15.css",{"as":"style"}]
-0:["osWFgk6YisyMTPrCW2IMb",[[["",{"children":["posts",{"children":[["slug","2021-in-startup","oc"],{"children":["__PAGE__?{\"slug\":[\"2021-in-startup\"]}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://imchanyo.github.io/_next/static/css/a5a00f3a0cf07b15.css","precedence":"next"}]],["$L3",null]]]]]
+0:["eT31dmx4bB2e6U1b436zT",[[["",{"children":["posts",{"children":[["slug","2021-in-startup","oc"],{"children":["__PAGE__?{\"slug\":[\"2021-in-startup\"]}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://imchanyo.github.io/_next/static/css/a5a00f3a0cf07b15.css","precedence":"next"}]],["$L3",null]]]]]
 4:HL["https://imchanyo.github.io/_next/static/css/03017dba18878506.css",{"as":"style"}]
 5:I{"id":2823,"chunks":["859:static/chunks/859-2abb4f790380e19a.js","185:static/chunks/app/layout-cb1b9e54939e8cc6.js"],"name":"Providers","async":false}
 6:I{"id":5739,"chunks":["272:static/chunks/webpack-cfb32c1638833b93.js","189:static/chunks/ff067eab-408d2276d6f02680.js","927:static/chunks/927-fa6ec7729088b109.js"],"name":"default","async":false}
