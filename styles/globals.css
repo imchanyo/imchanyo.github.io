@@ -3,6 +3,9 @@
 @import url('https://webfontworld.github.io/amore/AritaBuri.css');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700;800;900&display=swap');
 
+@import './variables.css';
+@import './font.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +13,7 @@
 /* ---- color palette ---- */
 :root {
     --fg: var(--gray12);
-    --bg: #ffffff;
+    --bg: rgb(244 242 242);
     --text-color: #3a3a3a;
     --alpha: hsla(0, 0%, 100%, 0.9);
     --shadow-color: hsla(0, 6%, 6%, 0.05);
@@ -78,7 +81,7 @@
 @layer base {
     :root {
         --page-width: 1072px;
-        --content-width: 640px;
+        --content-width: 800px;
         --page-left: auto;
         --page-top: 128px;
         --header-height: 48px;
@@ -146,6 +149,7 @@
         /* padding-left: var(--body-margin-left); */
         /* padding-right: var(--body-margin-right); */
         padding-bottom: env(safe-area-inset-bottom);
+        font-family: 'Pretendard-Regular';
     }
 
     * {
@@ -154,6 +158,10 @@
 
     ::selection {
         @apply bg-black-A4 decoration-gray-9 shadow-none;
+    }
+
+    p {
+        font-size: 18px;
     }
 
     /* ---- scrollbar ---- */
@@ -201,7 +209,7 @@
 
 @layer components {
     .main-grid {
-        @apply grid grid-cols-[192px_640px_192px] items-start gap-6 lg:grid-cols-[auto_640px_auto]
+        @apply grid grid-cols-[200px_800px_200px] items-start gap-6 lg:grid-cols-[auto_800px_auto]
       md:flex md:flex-col md:justify-start md:gap-8;
     }
 

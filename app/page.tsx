@@ -9,35 +9,24 @@ import { filterDraft, sortDateDesc } from '~/libs/mdx';
 export default function Home() {
     return (
         <main className="text-tx">
-            <h1 className="mb-7 font-serif font-semibold">김찬영 ﹒ chanyoung</h1>
-            <p data-animate data-animate-stage={1}>
-                사용자와 <span className="font-serif font-semibold">부드러운</span> 상호작용하는 것, 복잡한 것을
-                단순하고 간편하게 만드는 것에 열광합니다.
+            <h1 className="mb-7">Blog</h1>
+            <p data-animate data-animate-stage={1} className="leading-8 tracking-wide">
+                개발하면서 탐구한 것을 소소하게 기록하는 공간입니다.
                 <br />
-                탐구하고 사색하는 것을 좋아하여 틈틈이 발견한 것을 기록하려 합니다.
+                시리즈로 연재된 포스트는 아래 시리즈북으로 편리하게 열람할 수 있습니다 🧐
             </p>
-            <p data-animate data-animate-stage={2} className="mt-7">
+            <p data-animate data-animate-stage={2} className="mt-7 leading-8 tracking-wide">
                 현재{' '}
-                <Link
-                    href="https://www.kakaocorp.com/page/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="link font-serif font-semibold"
-                >
-                    카카오
+                <Link href="https://megazone.digital/" target="_blank" rel="noreferrer" className="link">
+                    메가존
                 </Link>
-                에서{' '}
-                <Link
-                    href="https://brunch.co.kr/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="link font-serif font-semibold"
-                >
-                    브런치
+                에서 <br />
+                <Link href="https://brunch.co.kr/" target="_blank" rel="noreferrer" className="link">
+                    웹 아키텍처
                 </Link>
                 를 개발하고 있습니다.
             </p>
-            <div data-animate data-animate-stage={2} className="mt-2 flex gap-2">
+            {/* <div data-animate data-animate-stage={2} className="mt-2 flex gap-2">
                 <Link
                     className="text-gray-12 hover:text-gray-11"
                     href="https://github.com/imchanyo"
@@ -46,25 +35,18 @@ export default function Home() {
                 >
                     <GithubIcon />
                 </Link>
-                <Link
-                    className="text-gray-12 hover:text-gray-11"
-                    href="https://twitter.com/__pyungan"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <TwitterXIcon />
-                </Link>
+
                 <Link className="flex items-end text-gray-12 hover:text-gray-11" href="" target="_blank">
                     <NotionIcon />
                     <span className="ml-px text-[6px] leading-tight">(이력서)</span>
                 </Link>
-            </div>
+            </div> */}
 
             {/* <BookList /> */}
 
             <div data-animate data-animate-stage={3} className="mt-12 flex gap-8">
                 <div className="w-80">
-                    <h2 className="mb-4 font-serif text-gray-11">나의 서재</h2>
+                    <h2 className="mb-4">나의 서재</h2>
                     {allWritings
                         .filter(filterDraft)
                         .sort(sortDateDesc)
@@ -91,7 +73,7 @@ export default function Home() {
                     </Link>
                 </div>
                 <div className="w-80">
-                    <h2 className="mb-4 font-serif text-gray-11">수첩</h2>
+                    <h2 className="mb-4text-gray-11">수첩</h2>
                     {allNotes
                         .filter(filterDraft)
                         .sort(sortDateDesc)
