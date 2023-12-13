@@ -11,38 +11,6 @@
 @tailwind utilities;
 @tailwind screens;
 /* ---- color palette ---- */
-:root {
-    --fg: var(--gray12);
-    --bg: rgb(244 242 242);
-    --text-color: #3a3a3a;
-    --alpha: hsla(0, 0%, 100%, 0.9);
-    --shadow-color: hsla(0, 6%, 6%, 0.05);
-    --indigo: #5856d6;
-    --gray1: #fcfcfc;
-    --gray2: #f8f8f8;
-    --gray3: #f3f3f3;
-    --gray4: #ededed;
-    --gray5: #e8e8e8;
-    --gray6: #e2e2e2;
-    --gray7: #dbdbdb;
-    --gray8: #c7c7c7;
-    --gray9: #8f8f8f;
-    --gray10: #858585;
-    --gray11: #6f6f6f;
-    --gray12: #171717;
-    --blackA1: rgba(0, 0, 0, 0.012);
-    --blackA2: rgba(0, 0, 0, 0.027);
-    --blackA3: rgba(0, 0, 0, 0.047);
-    --blackA4: rgba(0, 0, 0, 0.071);
-    --blackA5: rgba(0, 0, 0, 0.09);
-    --blackA6: rgba(0, 0, 0, 0.114);
-    --blackA7: rgba(0, 0, 0, 0.141);
-    --blackA8: rgba(0, 0, 0, 0.22);
-    --blackA9: rgba(0, 0, 0, 0.439);
-    --blackA10: rgba(0, 0, 0, 0.478);
-    --blackA11: rgba(0, 0, 0, 0.565);
-    --blackA12: rgba(0, 0, 0, 0.91);
-}
 
 .dark {
     --fg: #f2f2f2;
@@ -77,6 +45,38 @@
     --blackA12: hsla(0, 0%, 100%, 0.923);
 }
 
+:root {
+    --fg: var(--gray12);
+    --bg: rgb(244 242 242);
+    --text-color: #3a3a3a;
+    --alpha: hsla(0, 0%, 100%, 0.9);
+    --shadow-color: hsla(0, 6%, 6%, 0.05);
+    --indigo: #5856d6;
+    --gray1: #fcfcfc;
+    --gray2: #f8f8f8;
+    --gray3: #f3f3f3;
+    --gray4: #ededed;
+    --gray5: #e8e8e8;
+    --gray6: #e2e2e2;
+    --gray7: #dbdbdb;
+    --gray8: #c7c7c7;
+    --gray9: #8f8f8f;
+    --gray10: #858585;
+    --gray11: #6f6f6f;
+    --gray12: #171717;
+    --blackA1: rgba(0, 0, 0, 0.012);
+    --blackA2: rgba(0, 0, 0, 0.027);
+    --blackA3: rgba(0, 0, 0, 0.047);
+    --blackA4: rgba(0, 0, 0, 0.071);
+    --blackA5: rgba(0, 0, 0, 0.09);
+    --blackA6: rgba(0, 0, 0, 0.114);
+    --blackA7: rgba(0, 0, 0, 0.141);
+    --blackA8: rgba(0, 0, 0, 0.22);
+    --blackA9: rgba(0, 0, 0, 0.439);
+    --blackA10: rgba(0, 0, 0, 0.478);
+    --blackA11: rgba(0, 0, 0, 0.565);
+    --blackA12: rgba(0, 0, 0, 0.91);
+}
 /* ---- variable ---- */
 @layer base {
     :root {
