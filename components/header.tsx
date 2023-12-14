@@ -64,10 +64,7 @@ export default function Header() {
             <Head>
                 <title>Maintain Hoon</title>
             </Head>
-            <header
-                ref={headerRef}
-                className="sticky top-0 left-0 w-full z-10 h-20 font-mono bg-white dark:bg-[#1a1a1a]"
-            >
+            <header ref={headerRef} className="sticky top-0 left-0 w-full z-10 h-20 font-mono">
                 <div className="text-black max-w-screen-md h-20 flex flex-nowrap items-center justify-evenly m-auto px-8">
                     <Link href="/">
                         {/* {theme === 'dark' ? (
