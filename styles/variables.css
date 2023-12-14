@@ -1,14 +1,14 @@
 @import './font.css';
 
 h1 {
-    font-size: 3.2rem;
+    font-size: 3rem;
     letter-spacing: -1px;
     line-height: 1.25;
     font-weight: 800;
     font-family: 'Tmon';
 }
 h2 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: 700;
     letter-spacing: -1px;
     line-height: 1.25;

@@ -53,31 +53,6 @@ export default function Home() {
                         return <ListCard post={post} />;
                     })}
 
-                {/* <div>
-                    <h2 className="mb-4">나의 서재</h2>
-                    {allWritings
-                        .filter(filterDraft)
-                        .sort(sortDateDesc)
-                        .map((post, i) => {
-                            return (
-                                <ListCard post={post} />
-                                // <div key={i} className="mb-4">
-                                //     <Link
-                                //         href={`${
-                                //             process.env.NODE_ENV === 'production'
-                                //                 ? `https://imchanyo.github.io${post.href}`
-                                //                 : post.href
-                                //         }`}
-                                //         className="link"
-                                //     >
-                                //         {post.title}
-                                //     </Link>
-                                //     <p className="mt-0.5 text-sm text-gray-11">{post.description}</p>
-                                // </div>
-                            );
-                        })}
-                </div> */}
-
                 {/* <div className="w-80">
                     <h2 className="mb-4text-gray-11">수첩1</h2>
                     {allNotes
