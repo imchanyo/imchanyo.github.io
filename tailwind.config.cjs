@@ -52,9 +52,10 @@ module.exports = {
             'black-A12': 'var(--blackA12)',
         },
         screens: {
-            lg: { max: '1024px' },
-            md: { max: '768px' },
-            sm: { max: '640px' },
+            lg: { min: '1024px' },
+            md: { min: '768px' },
+            sm: { min: '640px' },
+            maxSm: { max: '640px' },
         },
         extend: {
             backgroundImage: {

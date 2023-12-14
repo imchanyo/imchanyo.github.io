@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { GithubIcon, NotionIcon, TwitterXIcon } from '~/components/icons/logo-icon';
 import { BookList } from '~/components/book-list';
+import { ListCard } from '~/components/list-card';
 
 import { filterDraft, sortDateDesc } from '~/libs/mdx';
 
@@ -44,35 +45,40 @@ export default function Home() {
 
             {/* <BookList /> */}
 
-            <div data-animate data-animate-stage={3} className="mt-12 flex gap-8">
-                <div className="w-80">
+            <div data-animate data-animate-stage={3} className="mt-12 flex flex-wrap">
+                {allWritings
+                    .filter(filterDraft)
+                    .sort(sortDateDesc)
+                    .map((post, i) => {
+                        return <ListCard post={post} />;
+                    })}
+
+                {/* <div>
                     <h2 className="mb-4">나의 서재</h2>
                     {allWritings
                         .filter(filterDraft)
                         .sort(sortDateDesc)
-                        .slice(0, 3)
                         .map((post, i) => {
                             return (
-                                <div key={i} className="mb-4">
-                                    <Link
-                                        href={`${
-                                            process.env.NODE_ENV === 'production'
-                                                ? `https://imchanyo.github.io${post.href}`
-                                                : post.href
-                                        }`}
-                                        className="link"
-                                    >
-                                        {post.title}
-                                    </Link>
-                                    <p className="mt-0.5 text-sm text-gray-11">{post.description}</p>
-                                </div>
+                                <ListCard post={post} />
+                                // <div key={i} className="mb-4">
+                                //     <Link
+                                //         href={`${
+                                //             process.env.NODE_ENV === 'production'
+                                //                 ? `https://imchanyo.github.io${post.href}`
+                                //                 : post.href
+                                //         }`}
+                                //         className="link"
+                                //     >
+                                //         {post.title}
+                                //     </Link>
+                                //     <p className="mt-0.5 text-sm text-gray-11">{post.description}</p>
+                                // </div>
                             );
                         })}
-                    <Link href="/writing" className="link inline-block text-gray-11">
-                        ...
-                    </Link>
-                </div>
-                <div className="w-80">
+                </div> */}
+
+                {/* <div className="w-80">
                     <h2 className="mb-4text-gray-11">수첩1</h2>
                     {allNotes
                         .filter(filterDraft)
@@ -90,7 +96,7 @@ export default function Home() {
                     <Link href="/note" className="link inline-block text-gray-11">
                         ...
                     </Link>
-                </div>
+                </div> */}
             </div>
         </div>
     );

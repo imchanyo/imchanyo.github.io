@@ -84,10 +84,10 @@ export default function Header() {
                                 {currentTheme === 'dark' ? <Moon /> : <Sun />}
                             </button>
 
-                            <button type="button" className="m-0 p-0 hidden sm:flex" onClick={handleToggle}>
+                            <button type="button" className="m-0 p-0 hidden maxSm:flex" onClick={handleToggle}>
                                 <Toggle />
                             </button>
-                            <div className="flex flex-nowrap items-center justify-center gap-5 text-center sm:hidden">
+                            <div className="flex flex-nowrap items-center justify-center gap-5 text-center hidden sm:flex">
                                 <Nav type="normal" />
                             </div>
                         </div>
