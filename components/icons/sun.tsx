@@ -5,6 +5,7 @@ export const Sun = () => {
                 d="M12 18.5C15.5899 18.5 18.5 15.5899 18.5 12C18.5 8.41015 15.5899 5.5 12 5.5C8.41015 5.5 5.5 8.41015 5.5 12C5.5 15.5899 8.41015 18.5 12 18.5Z"
                 stroke="#292D32"
                 strokeWidth="1.5"
+                fill="rgb(250, 204, 21)"
                 strokeLinecap="round"
                 strokeLinejoin="round"
             />

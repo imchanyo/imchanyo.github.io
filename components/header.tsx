@@ -16,14 +16,17 @@ export default function Header() {
     const { systemTheme, theme, setTheme } = useTheme();
     const [hasMounted, setHasMounted] = useState(false);
     const currentTheme = theme === 'system' ? systemTheme : theme;
+    const shadowColor = (themeInfo: string) => {
+        return themeInfo === 'dark' ? 'shadow-[0_5px_7px_0px_#050505]' : 'shadow-[0_5px_7px_0px_#fff9f9]';
+    };
 
     const handleScroll = useCallback(() => {
-        const shadowColor = theme === 'dark' ? '#050505' : '#ececec';
+        if (!theme) return;
         if (window.scrollY > 0) {
-            headerRef.current?.classList.add(`shadow-[0_5px_7px_0px_${shadowColor}]`);
+            headerRef.current?.classList.add(shadowColor(theme));
             return;
         }
-        headerRef.current?.classList.remove(`shadow-[0_5px_7px_0px_${shadowColor}]`);
+        headerRef.current?.classList.remove(shadowColor(theme));
     }, [theme]);
 
     const handleToggle = () => {
@@ -37,9 +40,19 @@ export default function Header() {
         setOnToggle((prev) => !prev);
     };
 
+    const initShadowClassList = () => {
+        if (currentTheme === 'dark') {
+            headerRef.current?.classList.remove(shadowColor('light'));
+            headerRef.current?.classList.add(shadowColor('dark'));
+        } else {
+            headerRef.current?.classList.remove(shadowColor('dark'));
+            headerRef.current?.classList.add(shadowColor('light'));
+        }
+    };
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-
+        initShadowClassList();
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -55,13 +68,18 @@ export default function Header() {
             </Head>
 
             {hasMounted && (
-                <header ref={headerRef} className="sticky top-0 left-0 w-full z-10 h-20">
+                <header
+                    ref={headerRef}
+                    className="sticky top-0 left-0 w-full z-10 h-20 transition duration-500 bg-[#ececec] dark:bg-[#1a1a1a]"
+                >
                     <div className="text-black max-w-screen-md h-20 flex flex-nowrap items-center justify-evenly m-auto px-8">
                         <div className="flex flex-nowrap gap-8 items-center">
                             <button
                                 type="button"
                                 className="m-0 p-0"
-                                onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
+                                onClick={() => {
+                                    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+                                }}
                             >
                                 {currentTheme === 'dark' ? <Moon /> : <Sun />}
                             </button>
