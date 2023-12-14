@@ -43,7 +43,7 @@ export default function Home() {
                 </Link>
             </div> */}
 
-            {/* <BookList /> */}
+            <BookList />
 
             <div data-animate data-animate-stage={3} className="mt-12 flex flex-wrap">
                 {allWritings

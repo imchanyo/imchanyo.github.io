@@ -15,7 +15,7 @@ export default function NavHeader({ href, children }: { href: string; children?:
     }, [href]);
 
     return (
-        <nav className="sticky top-page font-serif leading-7 md:relative md:top-0">
+        <nav className="sticky top-page font-serif leading-7 maxMd:relative maxMd:top-0 maxMd:static">
             <Link
                 href={href}
                 className="inline-flex select-none items-start gap-2 text-gray-11 transition-colors hover:text-gray-12"

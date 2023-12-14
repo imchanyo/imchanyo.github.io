@@ -121,13 +121,13 @@
         --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
     }
 
-    @media (min-width: 1024px) {
+    @media (max-width: 1024px) {
         :root {
             --page-top: 128px;
         }
     }
 
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
         :root {
             --page-top: 64px;
         }
@@ -214,7 +214,7 @@
 @layer components {
     .main-grid {
         @apply grid grid-cols-[200px_800px_200px] items-start gap-6 lg:grid-cols-[auto_800px_auto]
-      md:flex md:flex-col md:justify-start md:gap-8;
+      maxMd:flex maxMd:flex-col maxMd:justify-start maxMd:gap-8;
     }
 
     .main-grid main {

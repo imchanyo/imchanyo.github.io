@@ -56,6 +56,7 @@ module.exports = {
             md: { min: '768px' },
             sm: { min: '640px' },
             maxSm: { max: '640px' },
+            maxMd: { max: '768px' },
         },
         extend: {
             backgroundImage: {
