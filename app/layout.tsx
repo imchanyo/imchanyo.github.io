@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Providers>
                     <Header />
                     <div className="container mx-auto max-w-page py-page min-h-screen">
-                        <div className="max-w-screen-md flex flex-col px-10 m-auto">{children}</div>
+                        <main className="max-w-screen-md flex flex-col px-10 m-auto">{children}</main>
                         <FloatScrollTopButton />
                     </div>
                 </Providers>
