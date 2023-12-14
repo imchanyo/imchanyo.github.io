@@ -14,12 +14,12 @@
 
 :root {
     --fg: var(--gray12);
-    --bg: rgb(244 242 242);
+    --bg: var(--gray1);
     --text-color: #3a3a3a;
     --alpha: hsla(0, 0%, 100%, 0.9);
     --shadow-color: hsla(0, 6%, 6%, 0.05);
     --indigo: #5856d6;
-    --gray1: #fcfcfc;
+    --gray1: #ececec;
     --gray2: #f8f8f8;
     --gray3: #f3f3f3;
     --gray4: #ededed;
