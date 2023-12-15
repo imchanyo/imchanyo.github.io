@@ -37,30 +37,6 @@ function getDocFromParams({ params }: PageProps) {
     };
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-    const { categoryList } = getDocFromParams({ params });
-
-    if (!categoryList) {
-        return {};
-    }
-
-    return {
-        title: {
-            absolute: categoryList[0].title,
-        },
-        description: categoryList[0].description,
-        openGraph: {
-            title: categoryList[0].title,
-            description: categoryList[0].description,
-            images: [
-                'https://user-images.githubusercontent.com/65283190/262063367-a7407bba-09a0-420a-ae45-2ed3e6f3e3b8.png',
-            ],
-            locale: 'ko_KR',
-            type: 'website',
-        },
-    };
-}
-
 export default function WritingPage({ params }: PageProps) {
     const { categoryList, slug } = getDocFromParams({ params });
 
