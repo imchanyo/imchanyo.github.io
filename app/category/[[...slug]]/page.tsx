@@ -6,6 +6,7 @@ import { ListCard } from '~/components/list-card';
 import { filterDraft, sortDateDesc } from '~/libs/mdx';
 import { categoryInfo } from '~/constant/post';
 import { Badge } from '~/components/badge';
+import { Metadata } from 'next';
 
 interface PageProps {
     params: {
@@ -31,6 +32,29 @@ function getDocFromParams({ params }: PageProps) {
     return {
         categoryList,
         slug,
+    };
+}
+export function generateMetadata({ params }: PageProps): Metadata {
+    const { categoryList } = getDocFromParams({ params });
+
+    if (!categoryList) {
+        return {};
+    }
+
+    return {
+        title: {
+            absolute: categoryList[0]?.title,
+        },
+        description: categoryList[0]?.description,
+        openGraph: {
+            title: categoryList[0]?.title,
+            description: categoryList[0]?.description,
+            images: [
+                'https://user-images.githubusercontent.com/65283190/262063367-a7407bba-09a0-420a-ae45-2ed3e6f3e3b8.png',
+            ],
+            locale: 'ko_KR',
+            type: 'website',
+        },
     };
 }
 
