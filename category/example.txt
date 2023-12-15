@@ -1,5 +1,5 @@
 1:HL["https://imchanyo.github.io/_next/static/css/bacf5a330eea240b.css",{"as":"style"}]
-0:["8_mDacQjI_f-62fCCNMvG",[[["",{"children":["category",{"children":[["slug","example","oc"],{"children":["__PAGE__?{\"slug\":[\"example\"]}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://imchanyo.github.io/_next/static/css/bacf5a330eea240b.css","precedence":"next"}]],["$L3",null]]]]]
+0:["CoS-3t-JxxosYTAqA0gtM",[[["",{"children":["category",{"children":[["slug","example","oc"],{"children":["__PAGE__?{\"slug\":[\"example\"]}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://imchanyo.github.io/_next/static/css/bacf5a330eea240b.css","precedence":"next"}]],["$L3",null]]]]]
 4:HL["https://imchanyo.github.io/_next/static/css/308f85172533664e.css",{"as":"style"}]
 5:I{"id":2744,"chunks":["853:static/chunks/853-2d019c4d94f32d80.js","279:static/chunks/279-4225867a18bcffe8.js","185:static/chunks/app/layout-c4f3264a3c9a2d02.js"],"name":"Providers","async":false}
 6:I{"id":1843,"chunks":["853:static/chunks/853-2d019c4d94f32d80.js","279:static/chunks/279-4225867a18bcffe8.js","185:static/chunks/app/layout-c4f3264a3c9a2d02.js"],"name":"","async":false}

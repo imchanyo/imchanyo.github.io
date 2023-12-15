@@ -1,5 +1,5 @@
 1:HL["https://imchanyo.github.io/_next/static/css/bacf5a330eea240b.css",{"as":"style"}]
-0:["8_mDacQjI_f-62fCCNMvG",[[["",{"children":["writing",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://imchanyo.github.io/_next/static/css/bacf5a330eea240b.css","precedence":"next"}]],["$L3",null]]]]]
+0:["CoS-3t-JxxosYTAqA0gtM",[[["",{"children":["writing",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://imchanyo.github.io/_next/static/css/bacf5a330eea240b.css","precedence":"next"}]],["$L3",null]]]]]
 4:I{"id":2744,"chunks":["853:static/chunks/853-2d019c4d94f32d80.js","279:static/chunks/279-4225867a18bcffe8.js","185:static/chunks/app/layout-c4f3264a3c9a2d02.js"],"name":"Providers","async":false}
 5:I{"id":1843,"chunks":["853:static/chunks/853-2d019c4d94f32d80.js","279:static/chunks/279-4225867a18bcffe8.js","185:static/chunks/app/layout-c4f3264a3c9a2d02.js"],"name":"","async":false}
 6:I{"id":5739,"chunks":["272:static/chunks/webpack-58f4b9b3342de5db.js","189:static/chunks/ff067eab-02a1f42308fd20aa.js","927:static/chunks/927-5a207c24d337e438.js"],"name":"default","async":false}
