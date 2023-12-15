@@ -35,8 +35,7 @@ export default function Home() {
                 <div className="flex-1">
                     <div className="flex gap-5 flex-wrap">
                         {categoryInfo?.map((category, index) => (
-                            <Link href={`/category/${category.value}`} key={index}>
-                                <span>/category/${category.value}</span>
+                            <Link href={`category/${category.value}`} key={index}>
                                 <Badge category={category} index={index} />
                             </Link>
                         ))}
