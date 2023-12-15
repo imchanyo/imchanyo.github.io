@@ -1,15 +1,12 @@
-import '~/styles/mdx.css';
-
 import { allWritings } from 'contentlayer/generated';
-import { compareAsc, format } from 'date-fns';
-import { type Metadata } from 'next';
+import { format } from 'date-fns';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ListCard } from '~/components/list-card';
 import { filterDraft, sortDateDesc } from '~/libs/mdx';
 import { categoryInfo } from '~/constant/post';
 import { Badge } from '~/components/badge';
-import { CateogryInfoType } from '~/type/posts';
+
 interface PageProps {
     params: {
         slug: string[];
@@ -37,7 +34,7 @@ function getDocFromParams({ params }: PageProps) {
     };
 }
 
-export default function WritingPage({ params }: PageProps) {
+export default function CategoryPage({ params }: PageProps) {
     const { categoryList, slug } = getDocFromParams({ params });
 
     const categoryBadgeInfo = categoryInfo.find((cate) => cate.value === slug);
