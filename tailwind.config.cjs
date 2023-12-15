@@ -67,7 +67,7 @@ module.exports = {
                 main: 'auto 640px auto',
             },
             maxWidth: {
-                page: 1072,
+                page: 1200,
                 content: 640,
             },
             width: {

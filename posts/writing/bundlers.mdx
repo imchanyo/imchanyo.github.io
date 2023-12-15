@@ -1,11 +1,13 @@
 ---
 title: '차세대 번들러 비교 및 분석'
 description: '번들러는 왜 필요하고 어떻게 발전되어 가고 있을까?'
-image: ''
+image: 'https://gamguma.dev/_next/image?url=%2F2022%2F04%2Fmongodb_schema_design%2Fimages%2Fthumbnail.png&w=3840&q=75'
 draft: false
+category: 'webpack'
+subImage: '/img/posts/webpack.png'
 date: 2023-02-21 13:19:01
 tags:
-  - bundler
+    - bundler
 ---
 
 ## 번들러 란?
@@ -62,23 +64,23 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: {
-    home: './pages/home.js',
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
-    ],
-  },
-  plugins: [new HtmlWebpackPlugin()],
+    entry: {
+        home: './pages/home.js',
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js',
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader'],
+            },
+        ],
+    },
+    plugins: [new HtmlWebpackPlugin()],
 };
 ```
 
@@ -148,13 +150,13 @@ import { terser } from 'rollup-plugin-terser';
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-  input: 'src/main.js',
-  output: {
-    file: 'public/bundle.js',
-    format: 'iife',
-    sourcemap: true,
-  },
-  plugins: [resolve(), commonjs(), production && terser()],
+    input: 'src/main.js',
+    output: {
+        file: 'public/bundle.js',
+        format: 'iife',
+        sourcemap: true,
+    },
+    plugins: [resolve(), commonjs(), production && terser()],
 };
 ```
 
@@ -193,24 +195,24 @@ webpack에서도 공식적으론 ES6 혹은 CommonJS 한 형태의 코드 베이
 
 [**`ESBuild`**](https://github.com/evanw/esbuild)는 내부적으로 [`Go`](https://go.dev/)로 작성되었고 JS 기반의 번들러보다 10배에서 100배까지 빠른 엄청난 퍼포먼스를 보여줬습니다. 빠른 이유에 대해서는 아래와 같이 소개하고 있습니다.
 
-- 네이티브 코드 방식 사용
-- 병렬처리 최적화
-- 메모리 사용 최적화
-- 자체 JavaScript 파서 사용
-- https://esbuild.github.io/faq/
+-   네이티브 코드 방식 사용
+-   병렬처리 최적화
+-   메모리 사용 최적화
+-   자체 JavaScript 파서 사용
+-   https://esbuild.github.io/faq/
 
 문제는 2020년도에 파격적으로 등장 했지만 아직까지도 메이저 버전이 릴리즈 되지 못했습니다. (현재 기준 v0.17.3)
 사실 번들러로서 필수적인 기능들이 갖춰졌습니다.
 
-- JavaScript, CSS, TypeScript, and JSX built-in
-- Bundles ESM and CommonJS modules
-- Tree shaking, minification, and source maps
-- Local server, watch mode, and plugins
+-   JavaScript, CSS, TypeScript, and JSX built-in
+-   Bundles ESM and CommonJS modules
+-   Tree shaking, minification, and source maps
+-   Local server, watch mode, and plugins
 
 하지만 설정이 webpack, rollup처럼 유연하지 못하고 아직 안전성 관련 이슈가 있습니다.
 
-- code splitting 및 CSS와 관련된 처리가 아직 미비합니다.
-- esbuild는 es5 이하의 문법을 아직 100% 지원하지 않습니다.
+-   code splitting 및 CSS와 관련된 처리가 아직 미비합니다.
+-   esbuild는 es5 이하의 문법을 아직 100% 지원하지 않습니다.
 
 ## Vite
 
@@ -227,19 +229,19 @@ ESBuild의 단점을 보완시킨 라이브러리 [**`Vite`**](https://vitejs-kr
 
 vite를 2가지 키포인트로 설명할 수 있을 것 같습니다.
 
-- `native ES modules` 기반의 강력한 개발서버
-- `esbuild`로 파일들을 통합하고 `rollup`을 통해 번들링
+-   `native ES modules` 기반의 강력한 개발서버
+-   `esbuild`로 파일들을 통합하고 `rollup`을 통해 번들링
 
 전반적으로 `esbuild`로 성능을 극적을 끌어오고 `rollup`을 통해서 번들링의 유연성을 챙겼다고 볼 수 있습니다.
 [공식문서 (Vite를 사용해야 하는 이유)](https://vitejs-kr.github.io/guide/why.html)에서 자신에 대해 너무 잘 설명하고 있어 꼭 한번 정독해보시길 바랍니다!
 
 특성을 아래와 같이 요약할 수 있을 것 같습니다.
 
-- 개발 서버 구동 시간이 거의 `0`에 가까움,
-- 모든 CommonJS 및 UMD 파일을 ESM으로 불러올 수 있도록 변환함
-- 별도의 설정이 없이 다양한 리소스 `import` 가능
-- [CSS 빌드 최적화](https://vitejs-kr.github.io/guide/features.html#build-optimizations)
-  - `Direct Import` 구문에 대해 `Preload` 하도록 함으로써, 네트워크 비용 줄임
+-   개발 서버 구동 시간이 거의 `0`에 가까움,
+-   모든 CommonJS 및 UMD 파일을 ESM으로 불러올 수 있도록 변환함
+-   별도의 설정이 없이 다양한 리소스 `import` 가능
+-   [CSS 빌드 최적화](https://vitejs-kr.github.io/guide/features.html#build-optimizations)
+    -   `Direct Import` 구문에 대해 `Preload` 하도록 함으로써, 네트워크 비용 줄임
 
 ### 주의 해야할 점
 

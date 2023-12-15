@@ -1,8 +1,11 @@
 ---
 title: '글 예시'
 description: ''
-date: 1997-12-23 21:36:03
+image: 'https://gamguma.dev/_next/image?url=%2F2022%2F04%2Fmongodb_schema_design%2Fimages%2Fthumbnail.png&w=3840&q=75'
 draft: false
+category: 'javascript'
+subImage: '/img/posts/javascript.png'
+date: 1997-12-23 21:36:03
 ---
 
 가난한 **별** 이제 까닭이요, ~~벌레~~는 그 때 까닭이요, _버리었습니다_.
@@ -34,9 +37,9 @@ draft: false
 
 목록
 
-- 모든 국민은 행위시의 법률에 의하여 범죄를 구성하지 아니하는 행위로 소추되지 아니하며, 동일한 범죄에 대하여 거듭 처벌받지 아니한다.
-- 이 헌법에 의한 최초의 대통령의 임기는 이 헌법시행일로부터 개시한다.
-  - 모든 국민은 능력에 따라 균등하게 교육을 받을 권리를 가진다.
+-   모든 국민은 행위시의 법률에 의하여 범죄를 구성하지 아니하는 행위로 소추되지 아니하며, 동일한 범죄에 대하여 거듭 처벌받지 아니한다.
+-   이 헌법에 의한 최초의 대통령의 임기는 이 헌법시행일로부터 개시한다.
+    -   모든 국민은 능력에 따라 균등하게 교육을 받을 권리를 가진다.
 
 순서 목록
 
@@ -56,7 +59,7 @@ import clsx, { type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+    return twMerge(clsx(inputs));
 }
 ```
 
@@ -68,28 +71,24 @@ import type { Metadata } from 'next';
 import { fontMono, fontSans, fontSerif } from '~/libs/fonts';
 import { cn } from '~/libs/utils';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="ko" suppressHydrationWarning>
-      <body
-        className={cn(
-          'bg-background min-h-screen font-sans antialiased',
-          fontSans.variable,
-          fontSerif.variable,
-          fontMono.variable,
-        )}
-      >
-        <div className="blur" aria-hidden="true"></div>
-        <div className="max-w-page container mx-auto pt-32">
-          <div className="main-grid">{children}</div>
-        </div>
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+    return (
+        <html lang="ko" suppressHydrationWarning>
+            <body
+                className={cn(
+                    'bg-background min-h-screen font-sans antialiased',
+                    fontSans.variable,
+                    fontSerif.variable,
+                    fontMono.variable
+                )}
+            >
+                <div className="blur" aria-hidden="true"></div>
+                <div className="max-w-page container mx-auto pt-32">
+                    <div className="main-grid">{children}</div>
+                </div>
+            </body>
+        </html>
+    );
 }
 ```
 

@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 const nav: { title: string; location: string }[] = [
     { title: 'Home', location: '/' },
-    { title: 'Blog', location: '/blog' },
-    { title: 'Category', location: '/category' },
+    // { title: 'Blog', location: '/' },
+    // { title: 'Category', location: '/category' },
 ];
 
 interface NavProps {
@@ -23,13 +23,6 @@ export default function Nav({ type, onClick }: NavProps) {
                         href={location}
                         key={title}
                         className={type === 'normal' ? defaultStyleString : defaultStyleString + ' text-lg py-4'}
-                        onClick={
-                            onClick
-                                ? onClick
-                                : () => {
-                                      return;
-                                  }
-                        }
                     >
                         {title}
                     </Link>

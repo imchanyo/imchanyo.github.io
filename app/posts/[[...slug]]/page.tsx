@@ -30,7 +30,6 @@ function getDocFromParams({ params }: PageProps) {
     if (post) {
         post.date = format(new Date(post.date), 'MMMM dd. yyyy');
     }
-
     return post;
 }
 

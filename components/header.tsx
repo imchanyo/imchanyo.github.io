@@ -17,7 +17,7 @@ export default function Header() {
     const [hasMounted, setHasMounted] = useState(false);
     const currentTheme = theme === 'system' ? systemTheme : theme;
     const shadowColor = (themeInfo: string) => {
-        return themeInfo === 'dark' ? 'shadow-[0_5px_7px_0px_#050505]' : 'shadow-[0_5px_7px_0px_#fff9f9]';
+        return themeInfo === 'dark' ? 'shadow-[0_5px_7px_0px_#050505]' : 'shadow-[0_5px_7px_0px_#c2c2c280]';
     };
 
     const handleScroll = useCallback(() => {

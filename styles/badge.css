@@ -1,0 +1,11 @@
+.badgebox {
+    transform: 'none';
+    transition: transform 250ms;
+}
+.badgebox:hover {
+    transform: scale(1.2) translateZ(0px);
+}
+
+.tool-tip {
+    top : 30px
+}
