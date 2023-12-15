@@ -65,7 +65,7 @@ export default function Home() {
                     .sort(sortDateDesc)
                     .map((post, i) => {
                         return (
-                            <Link className="w-full" href={`/posts/${post.slug}`} key={i}>
+                            <Link className="w-full" href={`/posts/${post.slug}/`} key={i}>
                                 <ListCard post={post} />
                             </Link>
                         );
