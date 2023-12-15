@@ -7,6 +7,7 @@ import { filterDraft, sortDateDesc } from '~/libs/mdx';
 import { categoryInfo } from '~/constant/post';
 import { Badge } from '~/components/badge';
 import { Metadata } from 'next';
+import { rootUrl } from '~/libs/utils';
 
 interface PageProps {
     params: {
@@ -81,7 +82,7 @@ export default function CategoryPage({ params }: PageProps) {
                             .sort(sortDateDesc)
                             .map((post, i) => {
                                 return (
-                                    <Link className="w-full" href={`/posts/${post.slug}`} key={i}>
+                                    <Link className="w-full" href={rootUrl(`/posts/${post.slug}`)} key={i}>
                                         <ListCard type={'category'} post={post} />
                                     </Link>
                                 );

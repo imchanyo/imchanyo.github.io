@@ -7,6 +7,7 @@ import { ListCard } from '~/components/list-card';
 import { filterDraft, sortDateDesc } from '~/libs/mdx';
 import { Badge } from '~/components/badge';
 import { categoryInfo } from '~/constant/post';
+import { rootUrl } from '~/libs/utils';
 
 export default function Home() {
     return (
@@ -35,7 +36,7 @@ export default function Home() {
                 <div className="flex-1">
                     <div className="flex gap-5 flex-wrap">
                         {categoryInfo?.map((category, index) => (
-                            <Link href={`category/${category.value}`} key={index}>
+                            <Link href={rootUrl(`category/${category.value}`)} key={index}>
                                 <Badge category={category} index={index} />
                             </Link>
                         ))}
@@ -65,7 +66,7 @@ export default function Home() {
                     .sort(sortDateDesc)
                     .map((post, i) => {
                         return (
-                            <Link className="w-full" href={`/posts/${post.slug}/`} key={i}>
+                            <Link className="w-full" href={rootUrl(`/posts/${post.slug}`)} key={i}>
                                 <ListCard post={post} />
                             </Link>
                         );
