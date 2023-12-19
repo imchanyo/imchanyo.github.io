@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { rootUrl } from '~/libs/utils';
 const nav: { title: string; location: string }[] = [
-    { title: 'Home', location: 'https://imchanyo.github.io' },
+    { title: 'Home', location: rootUrl() },
     // { title: 'Blog', location: '/' },
     // { title: 'Category', location: '/category' },
 ];
@@ -24,7 +24,7 @@ export default function Nav({ type, onClick }: NavProps) {
                         key={title}
                         className={type === 'normal' ? defaultStyleString : defaultStyleString + ' text-lg py-4'}
                     >
-                        {title} {process.env.NODE_ENV}
+                        {title} {rootUrl()}
                     </Link>
                 );
             })}
