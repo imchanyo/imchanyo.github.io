@@ -11,19 +11,25 @@ import { rootUrl } from '~/libs/utils';
 
 interface PageProps {
     params: {
-        slug: string[];
+        slug: string;
     };
 }
 
 export function generateStaticParams() {
-    return allWritings.map(({ slug }) => ({ slug: slug.split('/') }));
+    return [
+        { slug: 'react' },
+        { slug: 'javascript' },
+        { slug: 'ts' },
+        { slug: 'next' },
+        { slug: 'vite' },
+        { slug: 'webpack' },
+    ];
 }
 
-function getDocFromParams({ params }: PageProps) {
-    const slug = params.slug.join('/');
-    console.log(24, params, slug);
+function getDocFromParams(slug: string) {
+    const categoryId = slug;
     const categoryList = allWritings
-        .filter((doc) => doc.category === slug)
+        .filter((doc) => doc.category === categoryId)
         .map((cate) => {
             return {
                 ...cate,
@@ -33,13 +39,12 @@ function getDocFromParams({ params }: PageProps) {
 
     return {
         categoryList,
-        slug,
+        categoryId,
     };
 }
 export function generateMetadata({ params }: PageProps): Metadata {
-    const { categoryList } = getDocFromParams({ params });
+    const { categoryList } = getDocFromParams(params.slug);
 
-    console.log(40, categoryList);
     if (!categoryList) {
         return {};
     }
@@ -62,7 +67,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
 }
 
 export default function CategoryPage({ params }: PageProps) {
-    const { categoryList, slug } = getDocFromParams({ params });
+    const { slug } = params;
+    const { categoryList, categoryId } = getDocFromParams(slug);
     console.log(66, params);
     const categoryBadgeInfo = categoryInfo.find((cate) => cate.value === slug);
 
