@@ -24,7 +24,7 @@ export default function Nav({ type, onClick }: NavProps) {
                         key={title}
                         className={type === 'normal' ? defaultStyleString : defaultStyleString + ' text-lg py-4'}
                     >
-                        {title}
+                        {title} {process.env.NODE_ENV}
                     </Link>
                 );
             })}
