@@ -1,7 +1,7 @@
 import Link from 'next/link';
-
+import { rootUrl } from '~/libs/utils';
 const nav: { title: string; location: string }[] = [
-    { title: 'Home', location: '/' },
+    { title: 'Home', location: rootUrl() },
     // { title: 'Blog', location: '/' },
     // { title: 'Category', location: '/category' },
 ];
