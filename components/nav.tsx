@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { rootUrl } from '~/libs/utils';
 const nav: { title: string; location: string }[] = [
-    { title: 'Home', location: 'https://imchanyo.github.io/' },
+    { title: 'Home', location: 'https://imchanyo.github.io' },
     // { title: 'Blog', location: '/' },
     // { title: 'Category', location: '/category' },
 ];
