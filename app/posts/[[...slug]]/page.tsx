@@ -12,6 +12,7 @@ import NavHeader from '~/components/nav-header';
 import { parseToc } from '~/libs/mdx';
 
 import TableOfContent from './table-of-content';
+import { rootUrl } from '~/libs/utils';
 
 interface PageProps {
     params: {
@@ -105,7 +106,7 @@ export default function WritingPage({ params }: PageProps) {
 
     const toc = parseToc(post.body.raw);
     const { prevPost, nextPost } = getReplatedInfo(post);
-
+    console.log(11, prevPost?.href);
     return (
         <>
             <div className="main-grid">
@@ -128,13 +129,16 @@ export default function WritingPage({ params }: PageProps) {
                         className="flex items-stretch justify-between gap-1 text-sm text-tx"
                     >
                         {!!prevPost && (
-                            <Link className="flex flex-col gap-1" href={prevPost.href}>
+                            <Link className="flex flex-col gap-1" href={`${rootUrl()}${prevPost.href}`}>
                                 <div className="text-gray-10">Previous</div>
                                 <span className="">{prevPost.title}</span>
                             </Link>
                         )}
                         {!!nextPost && (
-                            <Link className="ml-auto flex flex-col gap-1 text-right" href={nextPost.href}>
+                            <Link
+                                className="ml-auto flex flex-col gap-1 text-right"
+                                href={`${rootUrl()}${nextPost.href}`}
+                            >
                                 <div className="text-gray-10">Next</div>
                                 <span className="">{nextPost.title}</span>
                             </Link>
