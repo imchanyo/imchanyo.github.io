@@ -376,3 +376,8 @@
         --stagger: 20 !important;
     }
 }
+
+.center {
+    display: flex;
+    justify-content: center;
+}
