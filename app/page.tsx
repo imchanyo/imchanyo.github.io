@@ -18,17 +18,18 @@ export default function Home() {
     <div className="text-tx">
       <div className="flex gap-10">
         <div className="flex-1">
-          <h1 className="mb-7">Blog</h1>
+          <h1 className="mb-7">ChanYoung KIM</h1>
 
           <p
             data-animate
             data-animate-stage={1}
             className="leading-8 tracking-wide"
           >
-            개발하면서 탐구한 것을 소소하게 기록하는 공간입니다.
+            안녕하세요. 꾸준히 성장하고 있는 프론트 주니어 개발자입니다.
             <br />
-            시리즈로 연재된 포스트는 아래 시리즈북으로 편리하게 열람할 수
-            있습니다 🧐
+            배운 것을 공유하는 문화를 좋아하는 개발자입니다.
+            <br />
+            배움의 발자취를 기록하고 있습니다
           </p>
           <p
             data-animate
@@ -86,7 +87,7 @@ export default function Home() {
           target="_blank"
         >
           <NotionIcon />
-          <span className="ml-px text-[6px] leading-tight">(이력서)</span>
+          {/* <span className="ml-px text-[6px] leading-tight">(이력서)</span> */}
         </Link>
       </div>
 
