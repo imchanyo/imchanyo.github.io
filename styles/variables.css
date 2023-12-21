@@ -1,14 +1,14 @@
 @import './font.css';
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     letter-spacing: -1px;
     line-height: 1.25;
     font-weight: 800;
     font-family: 'Tmon';
 }
 h2 {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: -1px;
     line-height: 1.25;
@@ -16,7 +16,7 @@ h2 {
 }
 
 h3 {
-    font-size: 2.8rem;
+    font-size: 2rem;
     line-height: 1;
     letter-spacing: -0.8px;
     font-weight: 600;
@@ -24,7 +24,7 @@ h3 {
 }
 
 h4 {
-    font-size: 2.2rem;
+    font-size: 1.7rem;
     line-height: 1.27;
     letter-spacing: -0.8px;
     font-weight: 600;
@@ -32,7 +32,7 @@ h4 {
 }
 
 h5 {
-    font-size: 2.6rem;
+    font-size: 1.4rem;
     line-height: 1.23;
     letter-spacing: -0.8px;
     font-weight: 700;

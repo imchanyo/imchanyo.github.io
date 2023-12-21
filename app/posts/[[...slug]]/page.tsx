@@ -13,6 +13,7 @@ import { parseToc } from '~/libs/mdx';
 
 import TableOfContent from './table-of-content';
 import { rootUrl } from '~/libs/utils';
+import { DateIcon } from '~/components/icons/date-icon';
 
 interface PageProps {
     params: {
@@ -106,18 +107,25 @@ export default function WritingPage({ params }: PageProps) {
 
     const toc = parseToc(post.body.raw);
     const { prevPost, nextPost } = getReplatedInfo(post);
-    console.log(11, prevPost?.href);
+
     return (
         <>
             <div className="main-grid">
-                <NavHeader href={`/${post.type.toLocaleLowerCase()}`}>
+                <NavHeader href={`${rootUrl()}/category/${post.category}`}>
                     <TableOfContent toc={toc} />
                 </NavHeader>
                 <main>
                     {/* header */}
-                    <div className="mb-10">
-                        <h1 className="font-semibold leading-7">{post.title}</h1>
-                        <time className="text-sm text-gray-11">{post.date}</time>
+                    <div style={{ opacity: 1, willChange: 'opacity' }} className="mb-10">
+                        <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl mx-auto mb-4 max-w-3xl text-center">
+                            {post.title}
+                        </h1>
+
+                        <div className="mt-2 flex w-full gap-2 justify-center items-center">
+                            <DateIcon />
+                            <span>{post.date}</span>
+                        </div>
+                        <hr className="border-1 w-full border-neutral-300 transition-all dark:border-neutral-700 mt-4 bg-[#1a1a1a]"></hr>
                     </div>
                     {/* content */}
                     <Mdx data-animate-layer code={post.body.code} />

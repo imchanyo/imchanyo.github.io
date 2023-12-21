@@ -69,12 +69,12 @@ export function generateMetadata({ params }: PageProps): Metadata {
 export default function CategoryPage({ params }: PageProps) {
     const { slug } = params;
     const { categoryList, categoryId } = getDocFromParams(slug);
-    console.log(66, params);
+
     const categoryBadgeInfo = categoryInfo.find((cate) => cate.value === slug);
 
-    //   if (!categoryList) {
-    //     notFound();
-    //   }
+    if (!categoryList) {
+        notFound();
+    }
 
     return (
         <>
@@ -84,7 +84,7 @@ export default function CategoryPage({ params }: PageProps) {
                 </div>
 
                 <div>
-                    <div data-animate data-animate-stage={2} className="flex gap-5 flex-wrap">
+                    <div data-animate data-animate-stage={2} className="flex flex-wrap">
                         {categoryList
                             .filter(filterDraft)
                             .sort(sortDateDesc)
