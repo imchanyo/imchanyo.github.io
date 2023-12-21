@@ -12,7 +12,7 @@ import { rootUrl } from '~/libs/utils';
 export default function Home() {
     return (
         <div className="text-tx">
-            <div className="flex gap-10">
+            <div className="md:flex gap-10">
                 <div className="flex-1">
                     <h1 className="mb-7">ChanYoung KIM</h1>
 
@@ -34,8 +34,28 @@ export default function Home() {
                         </Link>
                         를 개발하고 있습니다.
                     </p>
+
+                    <div data-animate data-animate-stage={2} className="mt-2 flex gap-2">
+                        <Link
+                            className="text-gray-12 hover:text-gray-11 text-2xl"
+                            href="https://github.com/imchanyo"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <GithubIcon />
+                        </Link>
+
+                        <Link
+                            className="flex items-end text-gray-12 hover:text-gray-11 text-2xl"
+                            href=""
+                            target="_blank"
+                        >
+                            <NotionIcon />
+                            {/* <span className="ml-px text-[6px] leading-tight">(이력서)</span> */}
+                        </Link>
+                    </div>
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 maxSm:mt-5">
                     <div className="flex gap-5 flex-wrap">
                         {categoryInfo?.map((category, index) => (
                             <Link href={`${rootUrl()}/category/${category.value}`} key={index}>
@@ -44,22 +64,6 @@ export default function Home() {
                         ))}
                     </div>
                 </div>
-            </div>
-
-            <div data-animate data-animate-stage={2} className="mt-2 flex gap-2">
-                <Link
-                    className="text-gray-12 hover:text-gray-11"
-                    href="https://github.com/imchanyo"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <GithubIcon />
-                </Link>
-
-                <Link className="flex items-end text-gray-12 hover:text-gray-11" href="" target="_blank">
-                    <NotionIcon />
-                    {/* <span className="ml-px text-[6px] leading-tight">(이력서)</span> */}
-                </Link>
             </div>
 
             <div data-animate data-animate-stage={3} className="mt-12 flex flex-wrap">
