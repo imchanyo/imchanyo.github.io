@@ -186,6 +186,7 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
 .mdx p {
     @apply text-base leading-7 tracking-normal;
     font-size: 18px;
+    line-height: 1.7;
     /* font-feature-settings: 'kern', 'frac', 'kern', 'ss02'; */
 }
 

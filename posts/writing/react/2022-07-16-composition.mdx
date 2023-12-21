@@ -12,7 +12,7 @@ date: 2022-07-16 22:06:43
 
 뷰에서는 slot이 있다면 react에서는 children이 있다. 이를 왜 사용하는지 간단한 예제로 사용전 / 후로 비교하면서 설명하겠다.
 
-### Children 사용전 Module
+## Children 사용전 Module
 
 [![component2](https://imchanyo.netlify.app/static/28a8570f45ca5a61d40b1f3e5eec0ba0/fe486/component2.png)](https://imchanyo.netlify.app/static/28a8570f45ca5a61d40b1f3e5eec0ba0/445c6/component2.png)
 
@@ -94,7 +94,7 @@ export default ExpenseItem;
 
 ExpenseItem에서 title과 amount값을 맵핑해주고 다시 ExpenseDate로 date값을 props로 넘겨준다.
 
-### Why Sperate ?
+## Why Sperate ?
 
 우리는 왜이렇게 계속 작은단위까지 컴포넌트로 분리하는 것일까? 사실 App.js에서 모든것을 처리할 수있다. 앞서 1장에서 말한것처럼 작은단위까지 컴포넌트화 시키면 그만큼 유지보수하기 간편해진다. 모든 데이터를 한번에 처리하는 것보다 각컴포넌트에 맞는 데이터를 할당해주면 다른 개발자가 보더라도 가독성이 높아지고, 작은 컴포넌트에 집중할 수 있게된다.
 
