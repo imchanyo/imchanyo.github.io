@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         locale: 'ko_KR',
     },
     icons: {
-        shortcut: '/favicon.png',
+        shortcut: '/favicon.ico',
     },
     themeColor: [
         { media: '(prefers-color-scheme: light)', color: '#ffffff' },
