@@ -142,7 +142,7 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
 }
 
 .mdx > :where(h1, h2) {
-    @apply mt-page;
+    @apply mt-20;
 }
 .mdx > :where(h1) {
     font-size: 2.6rem;
