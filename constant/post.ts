@@ -29,4 +29,9 @@ export const categoryInfo = [
         value: 'vite',
         src: '/img/posts/vite.png',
     },
+    {
+        name: 'Project',
+        value: 'project',
+        src: '/img/posts/project.png',
+    },
 ];

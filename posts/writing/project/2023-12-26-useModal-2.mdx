@@ -1,10 +1,10 @@
 ---
 title: '공통 모달 커스텀 훅 (3)'
 description: '공통모달 커스텀 훅을 만들어서 모두가 사용할 수 있도록!'
-image: 'https://gamguma.dev/_next/image?url=%2F2022%2F04%2Fmongodb_schema_design%2Fimages%2Fthumbnail.png&w=3840&q=75'
+image: '/img/posts/custom.jpeg'
 draft: false
-category: 'react'
-subImage: '/img/posts/react.webp'
+category: 'project'
+subImage: '/img/posts/project.png'
 date: 2023-12-22 16:00:00
 ---
 
@@ -94,4 +94,4 @@ useEffect(() => {
 
 위의 코드에서 Back버튼에 currentIndex를 -1로 업데이트 시켜준다. 그다음, NextModalMappingCase 컴포넌트 최하단에서 currentIndex가 0이상일 경우에만 getModalHandler함수를 실행시켜 모달의 데이터를 업데이트 시켜준다. 사실 각각의 컴포넌트에서 getModalHandler를 프롭스로 받아 바로 실행시킬수도 있지만, 그렇게하면 Content 컴포넌트가 생길때마다 getModalHandler 프롭스를 넘겨줘야하고 getModalHandler함수안에 분기처리를 해야하는 로직이 추가될 것이다. 개발자의 성향마다 다르겠지만, 처음에 말했다시피 최상단에서 모달 데이터를 관리하는 단순한 플로우를 구현하고자 하였다.
 
- ![modal-mult](/gif/modal-mult.gif)
+![modal-mult](/gif/modal-mult.gif)
