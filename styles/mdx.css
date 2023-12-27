@@ -32,6 +32,9 @@
     -o-tab-size: 4;
     tab-size: 4;
 }
+.mdx code {
+    font-size: 1.1em;
+}
 
 .mdx [data-rehype-pretty-code-fragment] pre {
     @apply px-0;
