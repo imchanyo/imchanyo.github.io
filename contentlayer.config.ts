@@ -7,7 +7,7 @@ import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 
 import { parseSlug } from './libs/mdx';
-
+//
 const fields: FieldDefs = {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
