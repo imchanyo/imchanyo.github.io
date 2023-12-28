@@ -1,13 +1,13 @@
-import { allNotes, type Note } from 'contentlayer/generated';
-import { format } from 'date-fns';
-import { type Metadata } from 'next';
-import Link from 'next/link';
+import { allNotes, type Note } from "contentlayer/generated";
+import { format } from "date-fns";
+import { type Metadata } from "next";
+import Link from "next/link";
 
-import NavHeader from '~/components/nav-header';
-import { filterDraft } from '~/libs/mdx';
+import NavHeader from "~/components/nav-header";
+import { filterDraft } from "~/libs/mdx";
 
 export const metadata: Metadata = {
-  title: '수첩',
+  title: "수첩",
 };
 
 export default function NotePage() {
@@ -28,7 +28,7 @@ export default function NotePage() {
 
                 ac[year].push(v);
                 return ac;
-              }, {}),
+              }, {})
           )
             .sort((a, b) => +b[0] - +a[0])
             .map(([year, postList], i, years) => {
@@ -48,7 +48,7 @@ export default function NotePage() {
                   {postList
                     .sort(
                       (a, b) =>
-                        new Date(b.date).getTime() - new Date(a.date).getTime(),
+                        new Date(b.date).getTime() - new Date(a.date).getTime()
                     )
                     .map((post, i) => {
                       return (
@@ -63,7 +63,7 @@ export default function NotePage() {
                           >
                             <span>{post.title}</span>
                             <span className="flex-shrink-0 px-2 text-sm text-gray-9">
-                              {format(new Date(post.date), 'MM. dd.')}
+                              {format(new Date(post.date), "MM. dd.")}
                             </span>
                           </Link>
                         </div>
