@@ -9,6 +9,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const rootUrl = () => {
-    const root = process.env.NODE_ENV === 'production' ? 'https://imchanyo.github.io' : 'http://localhost:3000';
+    const root = process.env.NODE_ENV === 'production' ? 'https://imchanyo.github.io' : 'http://localhost:3050';
     return root;
 };
