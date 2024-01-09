@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     },
     icons: {
         shortcut: '/favicon.ico',
+        icon :  '/favicon.ico'
     },
     themeColor: [
         { media: '(prefers-color-scheme: light)', color: '#ffffff' },
