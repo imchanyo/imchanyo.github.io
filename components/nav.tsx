@@ -2,7 +2,7 @@ import Link from "next/link";
 import { rootUrl } from "~/libs/utils";
 const nav: { title: string; location: string }[] = [
   { title: "Home", location: rootUrl() },
-  { title: "About", location: "/" },
+  { title: "About", location: `${rootUrl()}/about` },
 ];
 
 interface NavProps {
