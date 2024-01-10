@@ -31,11 +31,17 @@ const TagComponent = ({
   };
   return (
     <div>
-      <h1>Tag</h1>
-      <h3 className="flex justify-end" style={{ fontFamily: 'Tmon' }}>
-        Total__{uniqueTags?.length}
-      </h3>
-      <ul className="tag-box grid grid-cols-3 gap-5 mt-10">
+      <div data-animate data-animate-stage={2}>
+        <h1>Tag</h1>
+        <h3 className="flex justify-end" style={{ fontFamily: 'Tmon' }}>
+          Total__{uniqueTags?.length}
+        </h3>
+      </div>
+      <ul
+        data-animate
+        data-animate-stage={2}
+        className="tag-box grid grid-cols-3 gap-5 mt-10"
+      >
         {groupedItems?.map((tag: any, index: number) => (
           <li key={`tag-list_${index}`}>
             <div
@@ -49,7 +55,7 @@ const TagComponent = ({
         ))}
       </ul>
 
-      <div className="tag-sub-container">
+      <div data-animate data-animate-stage={3} className="tag-sub-container">
         {groupedItems.map((origin: any, idx: number) => (
           <div
             ref={(el) => {
