@@ -34,7 +34,9 @@ export default function Tag() {
   };
 
   return (
-    <div>
+    <>
+      {groupedItems?.length > 0 ? <div>test</div> : null}
+
       {/* <h1>Tag</h1>
       <h3 className="flex justify-end" style={{ fontFamily: 'Tmon' }}>
         Total__{uniqueTags?.length}
@@ -99,7 +101,6 @@ export default function Tag() {
           </div>
         ))}
       </div> */}
-      Tag
-    </div>
+    </>
   );
 }
