@@ -66,10 +66,6 @@ export default function Header() {
   }, []);
   return (
     <>
-      <Head>
-        <title>Maintain Hoon</title>
-      </Head>
-
       {hasMounted && (
         <header
           ref={headerRef}
@@ -79,7 +75,7 @@ export default function Header() {
             <div className="flex flex-nowrap items-center justify-center gap-5 text-center hidden sm:flex">
               <Nav type="normal" />
             </div>
-            <div className="flex flex-nowrap gap-8 items-center">
+            <div className="flex flex-nowrap gap-2 items-center maxSm:mr-10">
               <button
                 type="button"
                 className="m-0 p-0 hidden maxSm:flex"
