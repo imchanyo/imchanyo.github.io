@@ -25,11 +25,11 @@ export default function Home() {
             data-animate-stage={1}
             className="leading-8 tracking-wide"
           >
-            안녕하세요. 꾸준히 성장하고 있는 프론트 주니어 개발자입니다.
+            안녕하세요.
             <br />
-            배운 것을 공유하는 문화를 좋아하는 개발자입니다.
+            저의 블로그에 와주셔서 진심으로 감사드립니다.
             <br />
-            배움의 발자취를 기록하고 있습니다
+            배움의 발자취를 기록하고 있습니다.
           </p>
           <p
             data-animate
@@ -46,12 +46,7 @@ export default function Home() {
               메가존
             </Link>
             에서 <br />
-            <Link
-              href="https://brunch.co.kr/"
-              target="_blank"
-              rel="noreferrer"
-              className="link"
-            >
+            <Link href="/" target="_blank" rel="noreferrer" className="link">
               웹 아키텍처
             </Link>
             를 개발하고 있습니다.

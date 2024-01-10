@@ -144,9 +144,15 @@ const Skill = styled.div`
   }
 `;
 
-const ExperienceCard = ({ experience }: { experience: any }) => {
+const ExperienceCard = ({
+  experience,
+  index,
+}: {
+  experience: any;
+  index: number;
+}) => {
   return (
-    <Card>
+    <Card key={`card_${index}`}>
       <Top>
         <Image src={experience.img} />
         <Body>
@@ -159,7 +165,13 @@ const ExperienceCard = ({ experience }: { experience: any }) => {
         <Ul>
           {experience?.desc &&
             experience?.desc?.split('\n').map((item: string, idx: number) => {
-              return item && <li style={{ listStyle: 'circle' }}>{item}</li>;
+              return (
+                item && (
+                  <li key={`li_${idx}`} style={{ listStyle: 'circle' }}>
+                    {item}
+                  </li>
+                )
+              );
             })}
         </Ul>
         {experience?.skills && (
@@ -169,7 +181,7 @@ const ExperienceCard = ({ experience }: { experience: any }) => {
               <b>Skills:</b>
               <ItemWrapper>
                 {experience?.skills?.map((skill: any, index: number) => (
-                  <Skill>{skill}</Skill>
+                  <Skill key={`skill_${index}`}>{skill}</Skill>
                 ))}
               </ItemWrapper>
             </Skills>

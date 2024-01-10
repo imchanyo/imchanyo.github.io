@@ -122,10 +122,7 @@ const Skills = () => {
     <Container id="skills" data-animate data-animate-stage={2}>
       <Wrapper>
         <Title>Skills</Title>
-        <Desc>
-          Here are some of my skills on which I have been working on for the
-          past 2 years.
-        </Desc>
+        <Desc>지난 3년동안 프로젝트에서 사용했던 기술들을 소개합니다.</Desc>
         <SkillsContainer>
           {skills.map((skill) => (
             <Skill key={skill.title}>

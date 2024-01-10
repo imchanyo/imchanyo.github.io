@@ -78,14 +78,11 @@ export default function Experience() {
     <Container id="experience" data-animate data-animate-stage={3}>
       <Wrapper>
         <Title>Experience</Title>
-        <Desc>
-          My work experience as a software engineer and working on different
-          companies and projects.
-        </Desc>
+        <Desc>프로젝트 구축 및 운영을 진행했었던 경력들을 소개합니다.</Desc>
         <TimelineSection>
           <Timeline>
             {experiences.map((experience, index) => (
-              <TimelineItem>
+              <TimelineItem key={index}>
                 <TimelineSeparator>
                   <TimelineDot
                     style={{ borderColor: '#3b82f680' }}
@@ -96,7 +93,7 @@ export default function Experience() {
                   )}
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
-                  <ExperienceCard experience={experience} />
+                  <ExperienceCard index={index} experience={experience} />
                 </TimelineContent>
               </TimelineItem>
             ))}

@@ -16,6 +16,8 @@ import Typewriter from 'typewriter-effect';
 import BgAnimation from '~/components/icons/bg-animation';
 import Skills from '~/components/skill';
 import Experience from '~/components/experience';
+import Link from 'next/link';
+import { GithubIcon, NotionIcon } from '~/components/icons/logo-icon';
 
 export default function About() {
   return (
@@ -42,6 +44,24 @@ export default function About() {
               </Span>
             </TextLoop>
             <SubTitle>{Bio.description}</SubTitle>
+            <div className="mt-2 flex gap-2">
+              <Link
+                className="text-gray-12 hover:text-gray-11 text-2xl"
+                href="https://github.com/imchanyo"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <GithubIcon />
+              </Link>
+
+              <Link
+                className="flex items-end text-gray-12 hover:text-gray-11 text-2xl"
+                href=""
+                target="_blank"
+              >
+                <NotionIcon />
+              </Link>
+            </div>
           </HeroLeftContainer>
 
           <HeroRightContainer id="Right">

@@ -1,7 +1,7 @@
 export const Bio = {
   name: 'Chan Young KIM',
   roles: ['Programmer', 'FrontEnd Developer', 'UI/UX Developer'],
-  description: `2021년부터 메가존에서 다양한 프로젝트를 구축 및 운영했습니다. 그 동안 여러 사람들과 협업하면서 착실하게 성장해왔습니다. 개발 한 것을 공유하고 리뷰하여 서로 발전할 수 있는 환경을 좋아합니다.`,
+  description: `2021년부터 메가존에서 다양한 프로젝트를 구축 및 운영했습니다. 그 동안 여러 사람들과 협업하면서 소통하는 개발자로서 착실하게 성장해왔습니다. 개발 한 것을 공유하고 리뷰하여 서로 발전할 수 있는 환경을 좋아합니다. 클라이언트,개발자, 사용자 모두에게 좋은 사용편의성을 제공하는 것을 목표로합니다. `,
   github: 'https://github.com/rishavchanda',
   resume:
     'https://drive.google.com/file/d/1ffZrcMcn8UatXGIaautbbqpV7ADNaETA/view?usp=sharing',
@@ -120,13 +120,11 @@ export const experiences = [
     date: 'Jul 2023 - Dec 2023',
     desc: `[BO / FO] Dashboard / 공지사항 / QnA / 지침서 / 라이브러리 / 약관등 페이지 구축\n
     Next 13 & Tuborepo SSG기반으로 개발 - 공통 레이아웃 및 설계 구축\n
-    현업과 팀원들에게 보다 원활한 러닝커브를 할 수있도록 코드 분석 및 리뷰를 제공하고 주도적으로 진행\n
+    현업과 팀원들에게 보다 원활한 러닝커브를 할 수있도록 코드 분석 및 리뷰를 제공\n
     Storybook을 제공하여 개발자 및 퍼블리셔에게 컨벤션 제공\n
-    React Query & Jotai 상태관리를 통해 서버 / 클라이언트 상태관리 분리하여 구축\n
-    커스텀 공통 훅 - 모달, 토스트팝업, 알럿, 필터검색등을 제공하여 개발자 효율증가\n
-    타입스크립트 컨벤션 구축으로 안전한 개발환경 조성\n
-    커스텀훅 디자인 패턴으로 개발하여 유지보수 향상\n
-    PDF / File등 레거시한 소스 클라이언트 요청에 맞게 validation등을 커스텀하여 비용단축 및 공통으로 제공하여 개발 효율 향상`,
+    React Query & Jotai 상태관리를 통해 서버 / 클라이언트 상태관리 분리하여 관리 효율 상승\n
+    커스텀 공통 훅 - 모달, 토스트팝업, 알럿, 필터검색등을 제공하여 개발자 편의사항 제공\n
+    타입스크립트 컨벤션 구축 및 PR전 빌드 실행하여 오류코드 예방`,
     skills: [
       'TypeScript',
       'ReactJS',

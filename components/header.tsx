@@ -39,6 +39,7 @@ export default function Header() {
       toggleRef.current?.classList.remove('hidden');
       document.body.classList.add('toggle');
     }
+
     setOnToggle((prev) => !prev);
   };
 
