@@ -24,13 +24,9 @@ const Description = styled.div`
   }
 `;
 
-const Span = styled.span`
-  overflow: hidden;
-  display: -webkit-box;
-  max-width: 100%;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
+const Ul = styled.ul`
+  margin-left: 15px;
+  line-height: 30px;
 `;
 
 const Card = styled.div`
@@ -59,7 +55,7 @@ const Card = styled.div`
     display: flex;
   }
 
-  &:hover ${Span} {
+  &:hover ${Ul} {
     overflow: visible;
     -webkit-line-clamp: unset;
   }
@@ -82,6 +78,9 @@ const Image = styled.img`
   @media only screen and (max-width: 768px) {
     height: 40px;
   }
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
 `;
 
 const Body = styled.div`
@@ -122,6 +121,8 @@ const Skills = styled.div`
   display: flex;
   gap: 12px;
   margin-top: -10px;
+  display: flex;
+  align-items: center;
 `;
 
 const ItemWrapper = styled.div`
@@ -133,7 +134,11 @@ const ItemWrapper = styled.div`
 const Skill = styled.div`
   font-size: 15px;
   font-weight: 400;
-  color: ${({ theme }) => theme.text_primary + 99};
+  border: 1px solid #373c3f;
+  border-radius: 4px;
+  background-color: #4d5357;
+  color: #ffbf00;
+  padding: 3px 8px;
   @media only screen and (max-width: 768px) {
     font-size: 12px;
   }
@@ -151,7 +156,12 @@ const ExperienceCard = ({ experience }: { experience: any }) => {
         </Body>
       </Top>
       <Description>
-        {experience?.desc && <Span>{experience?.desc}</Span>}
+        <Ul>
+          {experience?.desc &&
+            experience?.desc?.split('\n').map((item: string, idx: number) => {
+              return item && <li style={{ listStyle: 'circle' }}>{item}</li>;
+            })}
+        </Ul>
         {experience?.skills && (
           <>
             <br />
@@ -159,7 +169,7 @@ const ExperienceCard = ({ experience }: { experience: any }) => {
               <b>Skills:</b>
               <ItemWrapper>
                 {experience?.skills?.map((skill: any, index: number) => (
-                  <Skill>• {skill}</Skill>
+                  <Skill>{skill}</Skill>
                 ))}
               </ItemWrapper>
             </Skills>

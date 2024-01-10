@@ -44,7 +44,6 @@ export const HeroInnerContainer = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
   max-width: 1100px;
 
@@ -55,6 +54,7 @@ export const HeroInnerContainer = styled.div`
 export const HeroLeftContainer = styled.div`
   width: 100%;
   order: 1;
+  margin-top: 2rem;
   @media (max-width: 960px) {
     order: 2;
     margin-bottom: 30px;
@@ -153,9 +153,8 @@ export const Span = styled.span`
 `;
 
 export const SubTitle = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   line-height: 32px;
-  margin-bottom: 42px;
 
   @media (max-width: 960px) {
     text-align: center;

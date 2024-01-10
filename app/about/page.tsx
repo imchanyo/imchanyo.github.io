@@ -46,9 +46,8 @@ export default function About() {
 
           <HeroRightContainer id="Right">
             <Img
-              src={
-                'https://yceffort.kr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprofile.bde7746e.png&w=384&q=75'
-              }
+              style={{ objectFit: 'cover' }}
+              src="/img/me.jpeg"
               alt="hero-image"
             />
           </HeroRightContainer>
