@@ -14,7 +14,6 @@ const TagComponent = ({
   groupedItems: { tag: string; items: Writing[] }[];
   uniqueTags: string[];
 }) => {
-  const isMobile = window.innerWidth < 768;
   const scrollRef = useRef<HTMLDivElement[]>([]);
   const router = useRouter();
 
@@ -89,10 +88,11 @@ const TagComponent = ({
                     </p>
                     <div>
                       <time className="text-sm font-light text-gray-400 flex gap-2 items-center">
-                        {!isMobile &&
-                          sub?.tags?.map((tag: string, index: number) => (
+                        <div className="maxSm:hidden">
+                          {sub?.tags?.map((tag: string, index: number) => (
                             <span key={`tag${index}`}>{tag}</span>
                           ))}
+                        </div>
                         <DateIcon />
                         {format(new Date(sub.date), 'yyyy-MM-dd')}
                       </time>
