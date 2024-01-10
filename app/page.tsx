@@ -1,13 +1,8 @@
 import { allNotes, allWritings } from 'contentlayer/generated';
 import Link from 'next/link';
 
-import {
-  GithubIcon,
-  NotionIcon,
-  TwitterXIcon,
-} from '~/components/icons/logo-icon';
+import { GithubIcon, NotionIcon } from '~/components/icons/logo-icon';
 import { ListCard } from '~/components/list-card';
-import { useRouter } from 'next/router';
 import { filterDraft, sortDateDesc } from '~/libs/mdx';
 import { Badge } from '~/components/badge';
 import { categoryInfo } from '~/constant/post';

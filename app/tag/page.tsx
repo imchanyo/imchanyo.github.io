@@ -2,12 +2,12 @@
 
 import React, { useRef } from 'react';
 import { allWritings } from 'contentlayer/generated';
-import Link from 'next/link';
 import '~/styles/tag.css';
 import { rootUrl } from '~/libs/utils';
 import { DateIcon } from '~/components/icons/date-icon';
 import { format } from 'date-fns';
 import { useRouter } from 'next/navigation';
+
 export default function Tag() {
   const scrollRef = useRef<HTMLDivElement[]>([]);
   const router = useRouter();
@@ -19,7 +19,6 @@ export default function Tag() {
     tag: tag,
     items: allWritings.filter((item) => item?.tags && item.tags.includes(tag)),
   }));
-  console.log(groupedItems);
 
   const onMoveToElement = (tag: string) => {
     const tagRef = scrollRef.current.find((ref) => ref.id === tag);
@@ -36,7 +35,7 @@ export default function Tag() {
 
   return (
     <div>
-      <h1>Tag</h1>
+      {/* <h1>Tag</h1>
       <h3 className="flex justify-end" style={{ fontFamily: 'Tmon' }}>
         Total__{uniqueTags?.length}
       </h3>
@@ -99,23 +98,8 @@ export default function Tag() {
             </ul>
           </div>
         ))}
-      </div>
+      </div> */}
+      Tag
     </div>
   );
-}
-
-{
-  /* {groupedItems.map((origin, index) => (
-        <>
-          <h2>{origin.tag}</h2>
-          <>
-            {origin.items.map((el) => (
-              <>
-                <span>{el.title}</span>
-                {el.tags?.flatMap((e) => <div>{e}</div>)}
-              </>
-            ))}
-          </>
-        </>
-      ))} */
 }
