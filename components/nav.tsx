@@ -3,6 +3,7 @@ import { rootUrl } from '~/libs/utils';
 const nav: { title: string; location: string }[] = [
   { title: 'Home', location: rootUrl() },
   { title: 'About', location: `${rootUrl()}/about` },
+  { title: 'Tag', location: `${rootUrl()}/tag` },
 ];
 
 interface NavProps {

@@ -10,95 +10,103 @@ import { Metadata } from 'next';
 import { rootUrl } from '~/libs/utils';
 
 interface PageProps {
-    params: {
-        slug: string;
-    };
+  params: {
+    slug: string;
+  };
 }
 
 export function generateStaticParams() {
-    return [
-        { slug: 'react' },
-        { slug: 'javascript' },
-        { slug: 'ts' },
-        { slug: 'next' },
-        { slug: 'vite' },
-        { slug: 'webpack' },
-        { slug: 'project' },
-    ];
+  return [
+    { slug: 'react' },
+    { slug: 'javascript' },
+    { slug: 'ts' },
+    { slug: 'next' },
+    { slug: 'vite' },
+    { slug: 'webpack' },
+    { slug: 'project' },
+  ];
 }
 
 function getDocFromParams(slug: string) {
-    const categoryId = slug;
-    const categoryList = allWritings
-        .filter((doc) => doc.category === categoryId)
-        .map((cate) => {
-            return {
-                ...cate,
-                date: format(new Date(cate.date), 'MMMM dd. yyyy'),
-            };
-        });
+  const categoryId = slug;
+  const categoryList = allWritings
+    .filter((doc) => doc.category === categoryId)
+    .map((cate) => {
+      return {
+        ...cate,
+        date: format(new Date(cate.date), 'MMMM dd. yyyy'),
+      };
+    });
 
-    return {
-        categoryList,
-        categoryId,
-    };
+  return {
+    categoryList,
+    categoryId,
+  };
 }
 export function generateMetadata({ params }: PageProps): Metadata {
-    const { categoryList } = getDocFromParams(params.slug);
+  const { categoryList } = getDocFromParams(params.slug);
 
-    if (!categoryList) {
-        return {};
-    }
+  if (!categoryList) {
+    return {};
+  }
 
-    return {
-        title: {
-            absolute: categoryList[0]?.title,
-        },
-        description: categoryList[0]?.description,
-        openGraph: {
-            title: categoryList[0]?.title,
-            description: categoryList[0]?.description,
-            images: [
-                'https://user-images.githubusercontent.com/65283190/262063367-a7407bba-09a0-420a-ae45-2ed3e6f3e3b8.png',
-            ],
-            locale: 'ko_KR',
-            type: 'website',
-        },
-    };
+  return {
+    title: {
+      absolute: categoryList[0]?.title,
+    },
+    description: categoryList[0]?.description,
+    openGraph: {
+      title: categoryList[0]?.title,
+      description: categoryList[0]?.description,
+      images: [
+        'https://user-images.githubusercontent.com/65283190/262063367-a7407bba-09a0-420a-ae45-2ed3e6f3e3b8.png',
+      ],
+      locale: 'ko_KR',
+      type: 'website',
+    },
+  };
 }
 
 export default function CategoryPage({ params }: PageProps) {
-    const { slug } = params;
-    const { categoryList, categoryId } = getDocFromParams(slug);
+  const { slug } = params;
+  const { categoryList, categoryId } = getDocFromParams(slug);
 
-    const categoryBadgeInfo = categoryInfo.find((cate) => cate.value === slug);
+  const categoryBadgeInfo = categoryInfo.find((cate) => cate.value === slug);
 
-    if (!categoryList) {
-        notFound();
-    }
+  if (!categoryList) {
+    notFound();
+  }
 
-    return (
-        <>
-            <div className="main-grid">
-                <div data-animate data-animate-stage={1} className="flex justify-center">
-                    {categoryBadgeInfo && <Badge category={categoryBadgeInfo} />}
-                </div>
+  return (
+    <>
+      <div className="main-grid">
+        <div
+          data-animate
+          data-animate-stage={1}
+          className="flex justify-center"
+        >
+          {categoryBadgeInfo && <Badge category={categoryBadgeInfo} />}
+        </div>
 
-                <div>
-                    <div data-animate data-animate-stage={2} className="flex flex-wrap">
-                        {categoryList
-                            .filter(filterDraft)
-                            .sort(sortDateDesc)
-                            .map((post, i) => {
-                                return (
-                                    <Link className="w-full" href={`${rootUrl()}/posts/${post.slug}`} key={i}>
-                                        <ListCard type={'category'} post={post} />
-                                    </Link>
-                                );
-                            })}
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+        <div>
+          <div data-animate data-animate-stage={2} className="flex flex-wrap">
+            {categoryList
+              .filter(filterDraft)
+              .sort(sortDateDesc)
+              .map((post, i) => {
+                return (
+                  <Link
+                    className="w-full"
+                    href={`${rootUrl()}/posts/${post.slug}`}
+                    key={i}
+                  >
+                    <ListCard type={'category'} post={post} />
+                  </Link>
+                );
+              })}
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
