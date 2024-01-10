@@ -1,11 +1,11 @@
-'use client';
-import { useRef } from 'react';
-import '~/styles/tag.css';
-import { rootUrl } from '~/libs/utils';
-import { DateIcon } from '~/components/icons/date-icon';
-import { format } from 'date-fns';
-import { useRouter } from 'next/navigation';
-import { Writing } from 'contentlayer/generated';
+"use client";
+import { useRef } from "react";
+import "~/styles/tag.scss";
+import { rootUrl } from "~/libs/utils";
+import { DateIcon } from "~/components/icons/date-icon";
+import { format } from "date-fns";
+import { useRouter } from "next/navigation";
+import { Writing } from "contentlayer/generated";
 
 const TagComponent = ({
   groupedItems,
@@ -20,7 +20,7 @@ const TagComponent = ({
   const onMoveToElement = (tag: string) => {
     const tagRef = scrollRef.current.find((ref) => ref.id === tag);
     if (tagRef) {
-      tagRef.scrollIntoView({ behavior: 'smooth' });
+      tagRef.scrollIntoView({ behavior: "smooth" });
 
       //   tagRef.classList.add('tag-highlight');
 
@@ -34,7 +34,7 @@ const TagComponent = ({
     <div>
       <div data-animate data-animate-stage={2}>
         <h1>Tag</h1>
-        <h3 className="flex justify-end" style={{ fontFamily: 'Tmon' }}>
+        <h3 className="flex justify-end" style={{ fontFamily: "Tmon" }}>
           Total__{uniqueTags?.length}
         </h3>
       </div>
@@ -90,11 +90,13 @@ const TagComponent = ({
                       <time className="text-sm font-light text-gray-400 flex gap-2 items-center">
                         <div className="maxSm:hidden">
                           {sub?.tags?.map((tag: string, index: number) => (
-                            <span key={`tag${index}`}>{tag}</span>
+                            <span className="tag-item" key={`tag${index}`}>
+                              {tag}
+                            </span>
                           ))}
                         </div>
                         <DateIcon />
-                        {format(new Date(sub.date), 'yyyy-MM-dd')}
+                        {format(new Date(sub.date), "yyyy-MM-dd")}
                       </time>
                     </div>
                   </div>
