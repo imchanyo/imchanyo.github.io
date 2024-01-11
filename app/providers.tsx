@@ -23,17 +23,15 @@ export default function Providers({
   const router = useRouter();
   const actions = useKBarAction();
 
-  const res = useMemo(() => {
-    return allWritings?.map((el) => {
-      return {
-        id: el._id,
-        name: el.title,
-        perform: () => router.push(`${rootUrl()}${el.href}`),
-        section: "Posts",
-        icon: <LibBoxIcon width={18} />,
-      };
-    });
-  }, [allWritings]);
+  const res = allWritings?.map((el) => {
+    return {
+      id: el._id,
+      name: el.title,
+      perform: () => router.push(`${rootUrl()}${el.href}`),
+      section: "Posts",
+      icon: <LibBoxIcon width={18} />,
+    };
+  });
 
   return (
     <ThemeProvider
@@ -42,10 +40,14 @@ export default function Providers({
       enableSystem
       disableTransitionOnChange
     >
-      <KBarProvider actions={[...actions, ...res]}>
-        <KBar />
-        {children}
-      </KBarProvider>
+      {res ? (
+        <KBarProvider actions={[...actions, ...res]}>
+          <KBar />
+          {children}
+        </KBarProvider>
+      ) : (
+        <>{children}</>
+      )}
     </ThemeProvider>
   );
 }
