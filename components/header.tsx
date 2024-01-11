@@ -1,4 +1,5 @@
 'use client';
+
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Nav from '~/components/nav';
 import { Sun } from '~/components/icons/sun';

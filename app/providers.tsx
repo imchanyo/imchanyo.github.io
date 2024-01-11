@@ -14,7 +14,7 @@ import { $ } from '~/libs/core';
 import useKBarAction from '~/libs/useKBarAction';
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  // const actions = useKBarAction();
+  const actions = useKBarAction();
   return (
     <ThemeProvider
       attribute="class"
@@ -22,7 +22,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      {/* <KBarProvider actions={actions}>
+      <KBarProvider actions={actions}>
         <KBarPortal>
           <KBarPositioner className="z-50">
             <div className="pointer-events-none fixed inset-0 h-full w-full bg-white/50 backdrop-blur dark:bg-black/50" />
@@ -43,8 +43,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
             </KBarAnimator>
           </KBarPositioner>
         </KBarPortal>
-      </KBarProvider> */}
-      {children}
+        {children}
+      </KBarProvider>
     </ThemeProvider>
   );
 }
