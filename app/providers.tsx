@@ -1,25 +1,20 @@
-"use client";
+'use client';
 
-import { ThemeProvider } from "next-themes";
-import { KBarProvider } from "kbar";
+import { ThemeProvider } from 'next-themes';
+import { KBarProvider } from 'kbar';
 
-import dynamic from "next/dynamic";
-import useKBarAction from "~/libs/useKBarAction";
-import { Writing } from "contentlayer/generated";
-import { useRouter } from "next/navigation";
-import { rootUrl } from "~/libs/utils";
-import { LibBoxIcon } from "~/components/icons/lib-box-icon";
-import { useMemo } from "react";
+import dynamic from 'next/dynamic';
+import useKBarAction from '~/libs/useKBarAction';
+import { Writing } from 'contentlayer/generated';
+import { useRouter } from 'next/navigation';
+import { rootUrl } from '~/libs/utils';
+import { LibBoxIcon } from '~/components/icons/lib-box-icon';
+import { useMemo } from 'react';
+import { allWritings } from 'contentlayer/generated';
 
-const KBar = dynamic(() => import("~/components/kbar"), { ssr: false });
+const KBar = dynamic(() => import('~/components/kbar'), { ssr: false });
 
-export default function Providers({
-  children,
-  allWritings,
-}: {
-  children: React.ReactNode;
-  allWritings: Writing[];
-}) {
+export default function Providers({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const actions = useKBarAction();
 
