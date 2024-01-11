@@ -27,7 +27,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   //     icon: <LibBoxIcon width={18} />,
   //   };
   // });
-
+  console.log(30, allWritings);
   return (
     <ThemeProvider
       attribute="class"
