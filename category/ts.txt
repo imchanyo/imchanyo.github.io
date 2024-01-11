@@ -1,12 +1,12 @@
 1:HL["https://imchanyo.github.io/_next/static/css/d77e2d8c535d471c.css",{"as":"style"}]
-0:["vkIi0n8mGPBMvRSZMcVJ9",[[["",{"children":["category",{"children":[["slug","ts","d"],{"children":["__PAGE__?{\"slug\":\"ts\"}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://imchanyo.github.io/_next/static/css/d77e2d8c535d471c.css","precedence":"next"}]],["$L3",null]]]]]
+0:["3fFeUniIXvCLmXRDcQL-d",[[["",{"children":["category",{"children":[["slug","ts","d"],{"children":["__PAGE__?{\"slug\":\"ts\"}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://imchanyo.github.io/_next/static/css/d77e2d8c535d471c.css","precedence":"next"}]],["$L3",null]]]]]
 4:HL["https://imchanyo.github.io/_next/static/css/9fb3af439321877c.css",{"as":"style"}]
-5:I{"id":6261,"chunks":["952:static/chunks/952-d586846e9f8eb306.js","964:static/chunks/964-ea15f30564cec3f7.js","185:static/chunks/app/layout-119949afce956b5e.js"],"name":"","async":false}
-29:I{"id":2079,"chunks":["952:static/chunks/952-d586846e9f8eb306.js","964:static/chunks/964-ea15f30564cec3f7.js","185:static/chunks/app/layout-119949afce956b5e.js"],"name":"","async":false}
+5:I{"id":6261,"chunks":["952:static/chunks/952-d586846e9f8eb306.js","964:static/chunks/964-ea15f30564cec3f7.js","185:static/chunks/app/layout-17681b0c5d12f245.js"],"name":"","async":false}
+29:I{"id":2079,"chunks":["952:static/chunks/952-d586846e9f8eb306.js","964:static/chunks/964-ea15f30564cec3f7.js","185:static/chunks/app/layout-17681b0c5d12f245.js"],"name":"","async":false}
 2a:I{"id":2880,"chunks":["272:static/chunks/webpack-234df0fd4c2fa3af.js","571:static/chunks/78b5f895-08f0a4333d8dcd09.js","329:static/chunks/329-aadd23cc7247f045.js"],"name":"default","async":false}
 2b:I{"id":1073,"chunks":["272:static/chunks/webpack-234df0fd4c2fa3af.js","571:static/chunks/78b5f895-08f0a4333d8dcd09.js","329:static/chunks/329-aadd23cc7247f045.js"],"name":"default","async":false}
-2c:I{"id":7033,"chunks":["952:static/chunks/952-d586846e9f8eb306.js","964:static/chunks/964-ea15f30564cec3f7.js","185:static/chunks/app/layout-119949afce956b5e.js"],"name":"","async":false}
-2d:I{"id":8787,"chunks":["952:static/chunks/952-d586846e9f8eb306.js","964:static/chunks/964-ea15f30564cec3f7.js","185:static/chunks/app/layout-119949afce956b5e.js"],"name":"","async":false}
+2c:I{"id":7033,"chunks":["952:static/chunks/952-d586846e9f8eb306.js","964:static/chunks/964-ea15f30564cec3f7.js","185:static/chunks/app/layout-17681b0c5d12f245.js"],"name":"","async":false}
+2d:I{"id":8787,"chunks":["952:static/chunks/952-d586846e9f8eb306.js","964:static/chunks/964-ea15f30564cec3f7.js","185:static/chunks/app/layout-17681b0c5d12f245.js"],"name":"","async":false}
 6:T1ab4,
 ## 1. 기본형 데이터와 참조형 데이터
 
