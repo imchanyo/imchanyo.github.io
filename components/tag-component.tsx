@@ -74,18 +74,17 @@ const TagComponent = ({
             <h2 className="mt-10 pb-2">{origin.tag}</h2>
             <ul>
               {origin.items.map((sub: any, i: number) => (
-                <li key={`sub_${i}`}>
+                <li
+                  className="cursor-pointer transition-all hover:-translate-y-1 hover:bg-neutral-50 hover:ring-4 hover:ring-amber-200 active:bg-neutral-100"
+                  key={`sub_${i}`}
+                  onClick={() => {
+                    router.push(`${rootUrl()}/posts/${sub.slug}`, {
+                      scroll: true,
+                    });
+                  }}
+                >
                   <div className="flex justify-between">
-                    <p
-                      className="cursor-pointer"
-                      onClick={() => {
-                        router.push(`${rootUrl()}/posts/${sub.slug}`, {
-                          scroll: true,
-                        });
-                      }}
-                    >
-                      {sub.title}
-                    </p>
+                    <p>{sub.title}</p>
                     <div>
                       <time className="text-sm font-light text-gray-400 flex gap-2 items-center">
                         <div className="maxSm:hidden">

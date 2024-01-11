@@ -1,12 +1,12 @@
-import { allNotes, allWritings } from "contentlayer/generated";
-import Link from "next/link";
+import { allNotes, allWritings } from 'contentlayer/generated';
+import Link from 'next/link';
 
-import { GithubIcon, NotionIcon } from "~/components/icons/logo-icon";
-import { ListCard } from "~/components/list-card";
-import { filterDraft, sortDateDesc } from "~/libs/mdx";
-import { Badge } from "~/components/badge";
-import { categoryInfo } from "~/constant/post";
-import { rootUrl } from "~/libs/utils";
+import { GithubIcon, NotionIcon } from '~/components/icons/logo-icon';
+import { ListCard } from '~/components/list-card';
+import { filterDraft, sortDateDesc } from '~/libs/mdx';
+import { Badge } from '~/components/badge';
+import { categoryInfo } from '~/constant/post';
+import { rootUrl } from '~/libs/utils';
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
             data-animate-stage={2}
             className="mt-7 leading-8 tracking-wide"
           >
-            현재{" "}
+            현재{' '}
             <Link
               href="https://megazone.digital/"
               target="_blank"
