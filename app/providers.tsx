@@ -9,6 +9,7 @@ import { Writing } from "contentlayer/generated";
 import { useRouter } from "next/navigation";
 import { rootUrl } from "~/libs/utils";
 import { LibBoxIcon } from "~/components/icons/lib-box-icon";
+import { useMemo } from "react";
 
 const KBar = dynamic(() => import("~/components/kbar"), { ssr: false });
 
@@ -22,16 +23,17 @@ export default function Providers({
   const router = useRouter();
   const actions = useKBarAction();
 
-  const res = allWritings?.map((el) => {
-    return {
-      id: el._id,
-      name: el.title,
-      perform: () => router.push(`${rootUrl()}${el.href}`),
-      section: "Posts",
-      icon: <LibBoxIcon width={18} />,
-    };
-  });
-  console.log(19, allWritings);
+  const res = useMemo(() => {
+    return allWritings?.map((el) => {
+      return {
+        id: el._id,
+        name: el.title,
+        perform: () => router.push(`${rootUrl()}${el.href}`),
+        section: "Posts",
+        icon: <LibBoxIcon width={18} />,
+      };
+    });
+  }, [allWritings]);
 
   return (
     <ThemeProvider

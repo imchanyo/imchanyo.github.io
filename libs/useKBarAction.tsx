@@ -8,6 +8,7 @@ import { siteConfig } from "~/config";
 import MailIcon from "~/components/icons/mail-icon";
 import { AboutBoxIcon } from "~/components/icons/about-box.icon";
 import { TagBoxIcon } from "~/components/icons/tag-box-icon";
+import { rootUrl } from "./utils";
 
 const icons: { [key in string]: React.ReactNode } = {
   email: <MailIcon />,
@@ -34,7 +35,7 @@ export default function useKBarAction(): Action[] {
       keywords: "about",
       section: "Pages",
       icon: <AboutBoxIcon />,
-      perform: () => router.push("/about"),
+      perform: () => router.push(`${rootUrl}/about`),
     },
     {
       id: "tag",
@@ -43,7 +44,7 @@ export default function useKBarAction(): Action[] {
       keywords: "tag",
       section: "Pages",
       icon: <TagBoxIcon />,
-      perform: () => router.push("/tag"),
+      perform: () => router.push(`${rootUrl}/tag`),
     },
     {
       id: "archives",
@@ -51,7 +52,7 @@ export default function useKBarAction(): Action[] {
       shortcut: ["A"],
       section: "Pages",
       icon: <ArchiveBoxIcon />,
-      perform: () => router.push("/archives"),
+      perform: () => router.push(`${rootUrl}/archives`),
     },
 
     ...(Object.keys(siteConfig.author.contacts)

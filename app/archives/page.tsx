@@ -1,11 +1,12 @@
-import { allWritings, type Writing } from 'contentlayer/generated';
-import { format } from 'date-fns';
-import { type Metadata } from 'next';
-import Link from 'next/link';
-import { filterDraft } from '~/libs/mdx';
+import { allWritings, type Writing } from "contentlayer/generated";
+import { format } from "date-fns";
+import { type Metadata } from "next";
+import Link from "next/link";
+import { filterDraft } from "~/libs/mdx";
+import { rootUrl } from "~/libs/utils";
 
 export const metadata: Metadata = {
-  title: 'Archives',
+  title: "Archives",
 };
 
 export default function WritingPage() {
@@ -47,14 +48,14 @@ export default function WritingPage() {
                   .map((post, i) => {
                     return (
                       <Link
-                        href={post.href}
+                        href={`${rootUrl()}/${post.slug}`}
                         key={i}
                         className="group/item flex transition-opacity hover:!opacity-100 group-hover:opacity-40"
                       >
                         <div className="ml-[20%] flex flex-1 border-t py-3 group-first-of-type/item:border-t-0">
                           <span className="text-gray-12">{post.title}</span>
                           <span className="ml-auto flex-shrink-0 px-2 text-sm text-gray-9">
-                            {format(new Date(post.date), 'MM. dd.')}
+                            {format(new Date(post.date), "MM. dd.")}
                           </span>
                         </div>
                       </Link>
