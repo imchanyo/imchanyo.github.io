@@ -41,10 +41,15 @@ export default function Home() {
               메가존
             </Link>
             에서 <br />
-            <Link href="/" target="_blank" rel="noreferrer" className="link">
-              웹 아키텍처
+            <Link
+              href="https://658d172881b19f7cc7db0cc5-rzgrnabuff.chromatic.com/?path=/story/example-header--logged-out"
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+            >
+              web architecture
             </Link>
-            를 개발하고 있습니다.
+            를 담당하고 있습니다.
           </p>
 
           <div data-animate data-animate-stage={2} className="mt-2 flex gap-2">

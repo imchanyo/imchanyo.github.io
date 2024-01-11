@@ -62,7 +62,7 @@ function RenderResults() {
           <div
             className={$(
               'mx-3 flex cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors',
-              active && 'bg-secondary'
+              active && 'bg-[#ededed] dark:bg-[#262626]'
             )}
           >
             {item.icon && item.icon}

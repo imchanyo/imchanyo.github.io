@@ -3,38 +3,33 @@ import { DefaultSeoProps } from 'next-seo';
 export const headerConfig = {};
 
 export const siteConfig = {
-  url: 'https://bepyan.github.io',
-  title: 'bepyan blog',
+  url: 'https://imchanyo.github.io',
+  title: 'chans blog',
   description: '개발하면서 탐구한 것을 소소하게 기록하는 공간입니다.',
-  copyright: 'bepyan © All rights reserved.',
-  since: 2022,
+  copyright: 'chans © All rights reserved.',
+  since: 2024,
   googleAnalyticsId: '',
   author: {
-    name: 'Edward Kim',
-    photo: 'https://avatars.githubusercontent.com/u/65283190?v=4',
-    bio: 'Junior Frontend Engineer',
+    name: 'ChanYoung Kim',
+    photo: '',
+    bio: 'Frontend Engineer',
     contacts: {
-      email: 'bepyan@naver.com',
-      github: 'bepyan',
-      twitter: '__pyungan',
-      velog: '@bepyan',
-      linkedin: '',
-      youtube: '',
-      instagram: '',
+      email: 'chanyoung3320@gmail.com',
+      github: 'https://github.com/imchanyo',
     },
   },
   menus: [
     {
       label: 'Blog',
-      path: '/blog',
+      path: '/',
     },
     {
-      label: 'Snippets',
-      path: '/snippets',
+      label: 'About',
+      path: '/about',
     },
     {
-      label: 'Archives',
-      path: '/archives',
+      label: 'tag',
+      path: '/tag',
     },
   ],
 };

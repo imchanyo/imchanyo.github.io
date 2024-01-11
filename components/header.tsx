@@ -1,15 +1,12 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Nav from '~/components/nav';
-import Image from 'next/image';
-import Head from 'next/head';
-import Link from 'next/link';
 import { Sun } from '~/components/icons/sun';
 import { Moon } from '~/components/icons/moon';
 import { Toggle } from '~/components/icons/toggle';
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/navigation';
-import KBarButton from './KBarButton';
+import KBarButton from './k-bar-button';
 
 export default function Header() {
   const headerRef = useRef<HTMLElement>(null);

@@ -1,13 +1,13 @@
 export default function HomeIcon({
   className,
-  width = 16,
-  height = 16,
+  width = 20,
+  height = 20,
   ...props
 }: React.ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
+      fill="#676767"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"

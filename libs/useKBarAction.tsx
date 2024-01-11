@@ -1,15 +1,35 @@
+'use client';
 import { Action } from 'kbar';
 import { useRouter } from 'next/navigation';
-
-import ArchiveBoxIcon from '~/components/icons/ArchiveBoxIcon';
-import HomeIcon from '~/components/icons/HomeIcon';
-import InBoxIcon from '~/components/icons/InBoxIcon';
-import InBoxStackIcon from '~/components/icons/InBoxStackIcon';
-import GithubIcon from '~/components/icons/GithubIcon';
+import { ArchiveBoxIcon } from '~/components/icons/archive-box-icon';
+import HomeIcon from '~/components/icons/home-icon';
+import InBoxIcon from '~/components/icons/in-box-icon';
+import InBoxStackIcon from '~/components/icons/in-box-stack-icon';
+import GithubIcon from '~/components/icons/github-icon';
 import { siteConfig } from '~/config';
+import MailIcon from '~/components/icons/mail-icon';
+import { allWritings } from 'contentlayer/generated';
+import { rootUrl } from './utils';
+import { LibBoxIcon } from '~/components/icons/lib-box-icon';
+import { AboutBoxIcon } from '~/components/icons/about-box.icon';
+import { TagBoxIcon } from '~/components/icons/tag-box-icon';
+
+const icons: { [key in string]: React.ReactNode } = {
+  email: <MailIcon />,
+  github: <GithubIcon />,
+};
 
 export default function useKBarAction(): Action[] {
   const router = useRouter();
+  const res: Action[] = allWritings.map((el) => {
+    return {
+      id: el._id,
+      name: el.title,
+      perform: () => router.push(`${rootUrl()}${el.href}`),
+      section: 'Posts',
+      icon: <LibBoxIcon width={18} />,
+    };
+  });
 
   return [
     {
@@ -18,33 +38,33 @@ export default function useKBarAction(): Action[] {
       shortcut: ['H'],
       keywords: 'profile',
       section: 'Pages',
-      icon: <HomeIcon width={18} />,
+      icon: <HomeIcon width={20} />,
       perform: () => router.push('/'),
     },
     {
-      id: 'blog',
-      name: 'Blog',
-      shortcut: ['B'],
-      keywords: 'writing words',
+      id: 'about',
+      name: 'About',
+      shortcut: ['A'],
+      keywords: 'about',
       section: 'Pages',
-      icon: <ArchiveBoxIcon width={18} />,
-      perform: () => router.push('/blog'),
+      icon: <AboutBoxIcon />,
+      perform: () => router.push('/about'),
     },
     {
-      id: 'snippets',
-      name: 'Code Snippets',
-      shortcut: ['S'],
-      keywords: 'code',
+      id: 'tag',
+      name: 'Tags',
+      shortcut: ['T'],
+      keywords: 'tag',
       section: 'Pages',
-      icon: <InBoxIcon width={18} />,
-      perform: () => router.push('/snippets'),
+      icon: <TagBoxIcon />,
+      perform: () => router.push('/tag'),
     },
     {
       id: 'archives',
       name: 'Archives',
       shortcut: ['A'],
       section: 'Pages',
-      icon: <InBoxStackIcon width={18} />,
+      icon: <ArchiveBoxIcon />,
       perform: () => router.push('/archives'),
     },
 
@@ -61,12 +81,13 @@ export default function useKBarAction(): Action[] {
           name: sns,
           subtitle: link,
           section: 'Social',
-          icon: <GithubIcon />,
+          icon: icons?.[sns],
           perform: () => {
             window.open(link);
           },
         };
       })
       .filter(Boolean) as Action[]),
+    ...res,
   ];
 }
