@@ -29,7 +29,7 @@ export default function useKBarAction(allWritings: any) {
         keywords: 'profile',
         section: 'Pages',
         icon: <HomeIcon width={20} />,
-        perform: () => router.push('/'),
+        perform: () => router.push(`${rootUrl()}`),
       },
       {
         id: 'about',

@@ -83,10 +83,10 @@ export default function Header() {
             <div className="flex flex-nowrap items-center justify-center gap-5 text-center hidden sm:flex">
               <Nav type="normal" onClick={menuRouter} />
             </div>
-            <div className="flex gap-5">
+            <div className="flex gap-5 maxSm:justify-end maxSm:w-full">
               <KBarButton />
 
-              <div className="flex flex-nowrap gap-2 items-center maxSm:mr-10">
+              <div className="flex flex-nowrap gap-2 items-center">
                 <button
                   type="button"
                   className="m-0 p-0 hidden maxSm:flex"

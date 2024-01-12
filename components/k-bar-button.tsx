@@ -21,6 +21,7 @@ export default function KBarButton() {
 
       <div
         className={$(
+          'maxSm:hidden',
           'ml-auto rounded-lg px-2 py-1',
           'bg-primary border transition-colors dark:border-neutral-700',
           'dark:bg-[#ececec]'
