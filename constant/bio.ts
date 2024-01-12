@@ -57,6 +57,10 @@ export const skills = [
         image:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png',
       },
+      {
+        name: 'StoryBook',
+        image: 'https://iconape.com/wp-content/files/qa/371510/svg/371510.svg',
+      },
     ],
   },
   {

@@ -18,6 +18,7 @@ interface PageProps {
 export function generateStaticParams() {
   return [
     { slug: 'react' },
+    { slug: 'vue' },
     { slug: 'javascript' },
     { slug: 'ts' },
     { slug: 'next' },
