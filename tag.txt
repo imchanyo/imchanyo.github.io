@@ -1,14 +1,14 @@
 1:HL["https://imchanyo.github.io/_next/static/css/d77e2d8c535d471c.css",{"as":"style"}]
-0:["ESkST0daQ60Ar-ewKS44D",[[["",{"children":["tag",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://imchanyo.github.io/_next/static/css/d77e2d8c535d471c.css","precedence":"next"}]],["$L3",null]]]]]
+0:["uZ8XYkdRo1l1gIkes7zZL",[[["",{"children":["tag",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"https://imchanyo.github.io/_next/static/css/d77e2d8c535d471c.css","precedence":"next"}]],["$L3",null]]]]]
 4:HL["https://imchanyo.github.io/_next/static/css/b13f941a538976cc.css",{"as":"style"}]
-5:I{"id":9871,"chunks":["15:static/chunks/15-e4bae33ee186af05.js","845:static/chunks/845-c038c43fdb4fb6e0.js","185:static/chunks/app/layout-b4a140dcf3eeac06.js"],"name":"","async":false}
-6:I{"id":8290,"chunks":["15:static/chunks/15-e4bae33ee186af05.js","845:static/chunks/845-c038c43fdb4fb6e0.js","185:static/chunks/app/layout-b4a140dcf3eeac06.js"],"name":"","async":false}
-7:I{"id":829,"chunks":["15:static/chunks/15-e4bae33ee186af05.js","845:static/chunks/845-c038c43fdb4fb6e0.js","185:static/chunks/app/layout-b4a140dcf3eeac06.js"],"name":"","async":false}
+5:I{"id":9871,"chunks":["15:static/chunks/15-e4bae33ee186af05.js","845:static/chunks/845-c038c43fdb4fb6e0.js","185:static/chunks/app/layout-f9698aeb1bd56363.js"],"name":"","async":false}
+6:I{"id":8290,"chunks":["15:static/chunks/15-e4bae33ee186af05.js","845:static/chunks/845-c038c43fdb4fb6e0.js","185:static/chunks/app/layout-f9698aeb1bd56363.js"],"name":"","async":false}
+7:I{"id":829,"chunks":["15:static/chunks/15-e4bae33ee186af05.js","845:static/chunks/845-c038c43fdb4fb6e0.js","185:static/chunks/app/layout-f9698aeb1bd56363.js"],"name":"","async":false}
 8:I{"id":9180,"chunks":["272:static/chunks/webpack-c31bc9df695edaae.js","253:static/chunks/bce60fc1-04a1ba00a961e51b.js","698:static/chunks/698-4010e0620ed52572.js"],"name":"default","async":false}
 9:I{"id":2306,"chunks":["272:static/chunks/webpack-c31bc9df695edaae.js","253:static/chunks/bce60fc1-04a1ba00a961e51b.js","698:static/chunks/698-4010e0620ed52572.js"],"name":"default","async":false}
 a:I{"id":8160,"chunks":["15:static/chunks/15-e4bae33ee186af05.js","42:static/chunks/42-3f0bfcf66739d6e2.js","334:static/chunks/app/tag/page-bb331f6fbb6781e1.js"],"name":"","async":false}
-13:I{"id":789,"chunks":["15:static/chunks/15-e4bae33ee186af05.js","845:static/chunks/845-c038c43fdb4fb6e0.js","185:static/chunks/app/layout-b4a140dcf3eeac06.js"],"name":"","async":false}
-14:I{"id":7676,"chunks":["15:static/chunks/15-e4bae33ee186af05.js","845:static/chunks/845-c038c43fdb4fb6e0.js","185:static/chunks/app/layout-b4a140dcf3eeac06.js"],"name":"","async":false}
+13:I{"id":789,"chunks":["15:static/chunks/15-e4bae33ee186af05.js","845:static/chunks/845-c038c43fdb4fb6e0.js","185:static/chunks/app/layout-f9698aeb1bd56363.js"],"name":"","async":false}
+14:I{"id":7676,"chunks":["15:static/chunks/15-e4bae33ee186af05.js","845:static/chunks/845-c038c43fdb4fb6e0.js","185:static/chunks/app/layout-f9698aeb1bd56363.js"],"name":"","async":false}
 b:T27d1,
 ## ToDo로 알아보는 Class문법
 
