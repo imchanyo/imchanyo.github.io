@@ -6,6 +6,7 @@ import GoogleAnalytics from '~/components/google-analytics';
 import siteConfig from '~/libs/site-config';
 import Header from '~/components/header';
 import Providers from './providers';
+import { allWritings } from 'contentlayer/generated';
 
 export const metadata: Metadata = {
   title: {
@@ -54,7 +55,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Providers>
+        <Providers allWritings={allWritings}>
           <Header />
           <div className="container mx-auto max-w-page py-page min-h-screen">
             <main className="max-w-screen-md flex flex-col px-10 m-auto">

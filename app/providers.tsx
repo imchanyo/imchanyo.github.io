@@ -10,11 +10,16 @@ import { useRouter } from 'next/navigation';
 import { rootUrl } from '~/libs/utils';
 import { LibBoxIcon } from '~/components/icons/lib-box-icon';
 import { useMemo } from 'react';
-import { allWritings } from 'contentlayer/generated';
 
 const KBar = dynamic(() => import('~/components/kbar'), { ssr: false });
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+export default function Providers({
+  children,
+  allWritings,
+}: {
+  children: React.ReactNode;
+  allWritings: any;
+}) {
   const router = useRouter();
   const actions = useKBarAction();
 
@@ -27,7 +32,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   //     icon: <LibBoxIcon width={18} />,
   //   };
   // });
-  console.log(30, allWritings);
+
+  console.log(36, allWritings);
   return (
     <ThemeProvider
       attribute="class"
