@@ -8,11 +8,12 @@ const KBar = dynamic(() => import('~/components/kbar'), { ssr: false });
 
 export default function KBarProviders({
   children,
+  allWritings,
 }: {
   children: React.ReactNode;
+  allWritings: any;
 }) {
-  if (!window) return null;
-  const actions = useKBarAction();
+  const actions = useKBarAction(allWritings);
 
   if (actions?.length === 0 || !actions) return null;
 

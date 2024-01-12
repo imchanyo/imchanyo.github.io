@@ -8,7 +8,6 @@ import MailIcon from '~/components/icons/mail-icon';
 import { AboutBoxIcon } from '~/components/icons/about-box.icon';
 import { TagBoxIcon } from '~/components/icons/tag-box-icon';
 import { rootUrl } from './utils';
-import { allWritings } from 'contentlayer/generated';
 import { LibBoxIcon } from '~/components/icons/lib-box-icon';
 import { useEffect, useState } from 'react';
 
@@ -17,7 +16,7 @@ const icons: { [key in string]: React.ReactNode } = {
   github: <GithubIcon />,
 };
 
-export default function useKBarAction() {
+export default function useKBarAction(allWritings: any) {
   const router = useRouter();
   const [actionData, setActionData] = useState([]);
 
@@ -79,7 +78,7 @@ export default function useKBarAction() {
           };
         })
         .filter(Boolean) as Action[]),
-      ...allWritings?.map((el) => {
+      ...allWritings?.map((el: any) => {
         return {
           id: el._id,
           name: el.title,
