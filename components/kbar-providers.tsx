@@ -11,6 +11,7 @@ export default function KBarProviders({
 }: {
   children: React.ReactNode;
 }) {
+  if (!window) return null;
   const actions = useKBarAction();
 
   if (actions?.length === 0 || !actions) return null;
