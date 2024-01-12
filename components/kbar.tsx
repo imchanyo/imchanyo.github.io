@@ -1,5 +1,4 @@
 import {
-  KBarProvider,
   KBarPortal,
   KBarPositioner,
   KBarAnimator,
