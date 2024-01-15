@@ -16,7 +16,14 @@ export default function List({ allWritings }: { allWritings: Writing[] }) {
   const [page, setPage] = useState(1);
 
   const postList = useMemo(() => {
-    const cloneDeepAll = cloneDeep(allWritings);
+    const cloneDeepAll = cloneDeep(allWritings).sort((a, b) => {
+      const [dateA, dateB] = [
+        new Date(a.date).getFullYear(),
+        new Date(b.date).getFullYear(),
+      ];
+
+      return dateB - dateA;
+    });
     return cloneDeepAll.slice(0, page * 5);
   }, [allWritings, page]);
 
