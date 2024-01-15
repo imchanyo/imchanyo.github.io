@@ -92,7 +92,7 @@ export default function CategoryPage({ params }: PageProps) {
           {categoryBadgeInfo && <Badge category={categoryBadgeInfo} />}
         </div>
 
-        <div>
+        <div className="w-full">
           <div data-animate data-animate-stage={2} className="flex flex-wrap">
             {categoryList
               .filter(filterDraft)

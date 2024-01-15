@@ -17,7 +17,7 @@ export function ListCard({ post, type }: { post: Writing; type?: string }) {
         </div>
       </div>
       <div className="order-2 mt-4 flex grow basis-0 flex-col space-y-2 p-2 md:order-1 md:mt-0">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 flex-wrap items-center">
           <div className="w-8 overflow-hidden rounded-full">
             {post?.subImage && (
               <img
@@ -29,10 +29,7 @@ export function ListCard({ post, type }: { post: Writing; type?: string }) {
               />
             )}
           </div>
-          <h2
-            className="text-ellipsis"
-            style={{ fontSize: `${type ? '2rem' : ''}` }}
-          >
+          <h2 className="text-ellipsis maxSm:text-2xl text-3xl">
             {post.title}
           </h2>
         </div>
@@ -49,7 +46,7 @@ export function ListCard({ post, type }: { post: Writing; type?: string }) {
               </time>
 
               {post?.tags?.map((tag: string, index: number) => (
-                <span className="tag-item" key={`tag${index}`}>
+                <span className="tag-item maxSm:hidden" key={`tag${index}`}>
                   {tag}
                 </span>
               ))}
