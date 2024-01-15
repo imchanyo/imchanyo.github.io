@@ -1,12 +1,11 @@
-import { allNotes, allWritings } from 'contentlayer/generated';
+import { allWritings } from 'contentlayer/generated';
 import Link from 'next/link';
 
 import { GithubIcon, NotionIcon } from '~/components/icons/logo-icon';
-import { ListCard } from '~/components/list-card';
-import { filterDraft, sortDateDesc } from '~/libs/mdx';
 import { Badge } from '~/components/badge';
 import { categoryInfo } from '~/constant/post';
 import { rootUrl } from '~/libs/utils';
+import List from '~/components/list';
 
 export default function Home() {
   return (
@@ -87,40 +86,7 @@ export default function Home() {
       </div>
 
       <div data-animate data-animate-stage={3} className="mt-12 flex flex-wrap">
-        {allWritings
-          .filter(filterDraft)
-          .sort(sortDateDesc)
-          .map((post, i) => {
-            return (
-              <Link
-                className="w-full"
-                href={`${rootUrl()}/posts/${post.slug}`}
-                key={i}
-              >
-                <ListCard post={post} />
-              </Link>
-            );
-          })}
-
-        {/* <div className="w-80">
-          <h2 className="mb-4text-gray-11">수첩1</h2>
-          {allNotes
-            .filter(filterDraft)
-            .sort(sortDateDesc)
-            .slice(0, 5)
-            .map((post, i) => {
-              return (
-                <div key={i} className="mb-1">
-                  <Link href={post.href} className="link">
-                    {post.title}
-                  </Link>
-                </div>
-              );
-            })}
-          <Link href="/note" className="link inline-block text-gray-11">
-            ...
-          </Link>
-        </div> */}
+        <List allWritings={allWritings} />
       </div>
     </div>
   );
