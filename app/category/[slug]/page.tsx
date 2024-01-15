@@ -23,6 +23,8 @@ export function generateStaticParams() {
     { slug: 'ts' },
     { slug: 'next' },
     { slug: 'vite' },
+    { slug: 'storybook' },
+    { slug: 'nuxt' },
     { slug: 'webpack' },
     { slug: 'project' },
   ];
