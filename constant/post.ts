@@ -45,6 +45,11 @@ export const categoryInfo = [
     src: '/img/posts/vite.png',
   },
   {
+    name: 'Algorithms',
+    value: 'algorithms',
+    src: '/img/posts/algo.png',
+  },
+  {
     name: 'Project',
     value: 'project',
     src: '/img/posts/project.png',

@@ -17,11 +17,11 @@ export default function List({ allWritings }: { allWritings: Writing[] }) {
 
   const postList = useMemo(() => {
     const cloneDeepAll = cloneDeep(allWritings);
-    return cloneDeepAll.slice(0, page * 10);
+    return cloneDeepAll.slice(0, page * 5);
   }, [allWritings, page]);
 
   useEffect(() => {
-    if (page * 10 > postList.length) return;
+    if (page * 5 > postList.length) return;
 
     if (intersecting) {
       setPage((prev) => prev + 1);
