@@ -50,6 +50,11 @@ export const categoryInfo = [
     src: '/img/posts/algo.png',
   },
   {
+    name: 'Snippet',
+    value: 'snippet',
+    src: '/img/posts/snippet.png',
+  },
+  {
     name: 'Project',
     value: 'project',
     src: '/img/posts/project.png',

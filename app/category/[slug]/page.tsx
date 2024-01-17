@@ -27,6 +27,7 @@ export function generateStaticParams() {
     { slug: 'nuxt' },
     { slug: 'webpack' },
     { slug: 'algorithms' },
+    { slug: 'snippet' },
     { slug: 'project' },
   ];
 }

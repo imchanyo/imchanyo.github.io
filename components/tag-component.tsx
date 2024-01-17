@@ -1,11 +1,11 @@
-"use client";
-import { useRef } from "react";
-import "~/styles/tag.scss";
-import { rootUrl } from "~/libs/utils";
-import { DateIcon } from "~/components/icons/date-icon";
-import { format } from "date-fns";
-import { useRouter } from "next/navigation";
-import { Writing } from "contentlayer/generated";
+'use client';
+import { useRef } from 'react';
+import '~/styles/tag.scss';
+import { rootUrl } from '~/libs/utils';
+import { DateIcon } from '~/components/icons/date-icon';
+import { format } from 'date-fns';
+import { useRouter } from 'next/navigation';
+import { Writing } from 'contentlayer/generated';
 
 const TagComponent = ({
   groupedItems,
@@ -20,7 +20,7 @@ const TagComponent = ({
   const onMoveToElement = (tag: string) => {
     const tagRef = scrollRef.current.find((ref) => ref.id === tag);
     if (tagRef) {
-      tagRef.scrollIntoView({ behavior: "smooth" });
+      tagRef.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
       //   tagRef.classList.add('tag-highlight');
 
@@ -34,7 +34,7 @@ const TagComponent = ({
     <div>
       <div data-animate data-animate-stage={2}>
         <h1>Tag</h1>
-        <h3 className="flex justify-end" style={{ fontFamily: "Tmon" }}>
+        <h3 className="flex justify-end" style={{ fontFamily: 'Tmon' }}>
           Total__{uniqueTags?.length}
         </h3>
       </div>
@@ -95,7 +95,7 @@ const TagComponent = ({
                           ))}
                         </div>
                         <DateIcon />
-                        {format(new Date(sub.date), "yyyy-MM-dd")}
+                        {format(new Date(sub.date), 'yyyy-MM-dd')}
                       </time>
                     </div>
                   </div>
