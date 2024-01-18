@@ -1,0 +1,126 @@
+---
+title: 'useParamsData (1)'
+description: 'CRUD 데이터를 쉽게 관리해보자'
+image: '/img/posts/custom.jpeg'
+draft: false
+category: 'project'
+subImage: '/img/posts/project.png'
+date: 2024-01-09 17:00:00
+---
+
+
+
+## Data를 어떻게하면 효율적으로 관리할 수 있을까?
+
+![스크린샷 2023-12-26 오후 12.37.04](/img/posts/useparams-1.png)
+
+
+
+화면단에서 제일 많이하는 작업이 CRUD 데이터 가공입니다. 보통 위와같은 화면에서 개발하게된다면 우리는 아래와같은 작업을 거칠겁니다. 
+
+```tsx
+ const [testInfo, setTestInfo] = useState<TestInfoAddType>({
+    category: '',
+    startDate: '',
+	  endDate : '',
+    purpose: '',
+    testName: '',
+    desc: '',
+ })
+```
+
+이렇게 객체타입으로 구성된 testInfo를 생성하여 각각의 해당하는 이벤트를 통해서 사용자가 지정하는 값들을 testInfo에 없데이트 시켜줄겁니다. 다음과 같이말이죠.
+
+```tsx
+  const handleCategoryCodeChange = (event: SelectChangeEvent) => {
+    setTestInfo((prev) => {
+      return { ...prev, category: event.target.value }
+    })
+  }
+
+  const handleDueDateChange = ({ startDate, endDate }: { startDate: string; endDate: string }) => {
+    setTestInfo((prev) => {
+      return { ...prev, startDate, endDate }
+    })
+  }
+
+  const handleTestCodeChange = (event: SelectChangeEvent) => {
+    setTestInfo((prev) => {
+      return { ...prev, purpose: event.target.value }
+    })
+  }
+
+  const handleTestNameChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setTestInfo((prev) => {
+      return { ...prev, testName: event.target.value }
+    })
+  }
+```
+
+우리는 Input, TextArea, Select태그에서 각각의 onChange이벤트를 통해서 위의 함수처럼 값을 업데이트 시킵니다. 인풋박스하나마다 우리는 위와같이 계속 같은로직의 함수를 작성해야하는 번거로움이 생깁니다. 그래서 아래와 같이 중복을 방지하여 코드를작성합니다.
+
+```tsx
+  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>, key) => {
+    setTestInfo((prev) => {
+      return  {
+        ...prev,
+        [key] : event.target.value
+      }
+    })
+  }
+```
+
+key를 두번째 인자로 받아서 값을 갱신하는 것입니다. 여기서 event의 타입이 각각 다르기떄문에 이를 고려해야합니다. 유니온타입으로 따로 작성하여 타입을 제공하면 됩니다. 여기까지 도달하게되면, 한가지 더 생각하게됩니다. 첫번째 받는 인자의 event가 엘리멘트에서 제공하는 event타입이아니라, 순수한 값일 경우는 어떻게해야할까? 위의 UI에서 Due date 인풋박스가 그런 경우입니다. 그래서 각각의 분기처리가 필요해보입니다.
+
+
+
+## 데이터 타입에 따라 분기처리하여 관리하자!
+
+```tsx
+  const handleChange (data: unknown, key?: string) => {
+    
+  /* get Event Params */
+  if (key && typeof data === 'object' && 'target' in data) {
+    setTestInfo((prev) => {
+      return  {
+        ...prev,
+        [key] : data.target.value
+      }
+    })
+  }
+```
+
+먼저, event  type으로 받는 경우이다. event type으로 받을경우는 key가 필수값으로 제공되어야한다. 그리고, data 값에서 target이 있는 경우에만 해당하도록 하였다. Event로 제공해주는 엘리먼트는 많지만 자주 사용하는 태그는 input / button과 같은 태그이므로 이를 고려하여 target의 유무로 조건을 걸었다.
+
+
+
+```tsx
+ /* get Key value Params */
+  if (key) {
+   setTestInfo((prev)=> {
+     return {
+       ...prev,
+       [key]: data
+     }
+   })
+    return
+  }
+
+```
+
+위의 경우는, key는 제공되지만 event type아니라 순수한 값이 저장되는 경우이다.객체나 배열을 고려하였다.
+
+
+
+```tsx
+ /* get Object & Array type Params */
+  if (!key && typeof data === 'object') {
+    set(paramsAtom, {
+      ...prev,
+      ...data,
+    })
+ }
+```
+
+
+
