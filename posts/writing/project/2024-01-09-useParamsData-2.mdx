@@ -249,7 +249,7 @@ const NoticeEditPage = () => {
 
 ## useNoticeEditor
 
- <img src="/img/project/usenotice.png" width='400'/>
+ <img src="/img/project/data-flow.png" width='400'/>
 
 데이터흐름은 다음과 같은 순서로 진행됩니다.
 
@@ -378,3 +378,4 @@ export const useParamsData = <T>(initData?: T) => {
 좀 더 자세히 볼까요? 두번쨰 인자인 param은 옵셔널타입입니다. params와 initData가 있으면 위에서 설명드린 것처럼 initDataWithRes를 통해 세팅해줍니다. initData만 있다면 기준없이 api에서 받은 데이터를 모두 넣고싶은 경우입니다. 
 여기서 setLoading이 true로 업데이트가 되는데, 이는 isParamsLoading의 로딩을 실행하기 위함입니다. 데이터가 업데이트중이므로 로딩중이며, 업데이트가 완료된 이후 로딩이 완료됩니다. 따라서, api에서 데이터를 받을 때도 NoticeContent에서 따로 데이터에 관한 예외처리를 하지않아도 됩니다.
 
+ 
