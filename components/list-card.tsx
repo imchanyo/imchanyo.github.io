@@ -1,19 +1,19 @@
-import { Writing } from 'contentlayer/generated';
-import { format } from 'date-fns';
-import { DateIcon } from './icons/date-icon';
+import { Writing } from "contentlayer/generated";
+import { format } from "date-fns";
+import { DateIcon } from "./icons/date-icon";
 export function ListCard({ post, type }: { post: Writing; type?: string }) {
   return (
     <article className="mb-5 cursor-pointer w-full flex flex-col rounded-md p-4 shadow-sm ring-1 ring-gray-200 transition-all hover:-translate-y-1 hover:bg-neutral-50 hover:ring-4 hover:ring-amber-200 active:bg-neutral-100 dark:ring-gray-700 md:flex-row md:items-center md:justify-between md:space-x-2">
       <div className="grow-1 order-1 overflow-hidden rounded-lg shadow-md md:order-2 md:w-60 md:grow-0 md:basis-auto">
         <div className="relative">
-          {post.image && (
+          {/* {post.image && (
             <img
               alt="post-thumbnail"
               src={post.image}
               decoding="async"
               data-nimg="1"
             />
-          )}
+          )} */}
         </div>
       </div>
       <div className="order-2 mt-4 flex grow basis-0 flex-col space-y-2 p-2 md:order-1 md:mt-0">
@@ -42,7 +42,7 @@ export function ListCard({ post, type }: { post: Writing; type?: string }) {
             <div className="flex items-center space-x-3">
               <time className="text-sm font-light text-gray-400 flex gap-2 items-center">
                 <DateIcon width="20px" heigth="20px" />
-                {format(new Date(post.date), 'yyyy-MM-dd')}
+                {format(new Date(post.date), "yyyy-MM-dd")}
               </time>
 
               {post?.tags?.map((tag: string, index: number) => (

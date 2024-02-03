@@ -1,13 +1,12 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useRef, useState } from 'react';
-import Nav from '~/components/nav';
-import { Sun } from '~/components/icons/sun';
-import { Moon } from '~/components/icons/moon';
-import { Toggle } from '~/components/icons/toggle';
-import { useTheme } from 'next-themes';
-import { useRouter } from 'next/navigation';
-import KBarButton from './k-bar-button';
+import { useCallback, useEffect, useRef, useState } from "react";
+import Nav from "~/components/nav";
+import { Sun } from "~/components/icons/sun";
+import { Moon } from "~/components/icons/moon";
+import { Toggle } from "~/components/icons/toggle";
+import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const headerRef = useRef<HTMLElement>(null);
@@ -16,11 +15,11 @@ export default function Header() {
   const [onToggle, setOnToggle] = useState<boolean>(false);
   const { systemTheme, theme, setTheme } = useTheme();
   const [hasMounted, setHasMounted] = useState(false);
-  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const currentTheme = theme === "system" ? systemTheme : theme;
   const shadowColor = (themeInfo: string) => {
-    return themeInfo === 'dark'
-      ? 'shadow-[0_5px_7px_0px_#050505]'
-      : 'shadow-[0_5px_7px_0px_#c2c2c280]';
+    return themeInfo === "dark"
+      ? "shadow-[0_5px_7px_0px_#050505]"
+      : "shadow-[0_5px_7px_0px_#c2c2c280]";
   };
 
   const handleScroll = useCallback(() => {
@@ -38,11 +37,11 @@ export default function Header() {
 
   const handleToggle = (location?: string) => {
     if (onToggle) {
-      toggleRef.current?.classList.add('hidden');
-      document.body.classList.remove('toggle');
+      toggleRef.current?.classList.add("hidden");
+      document.body.classList.remove("toggle");
     } else {
-      toggleRef.current?.classList.remove('hidden');
-      document.body.classList.add('toggle');
+      toggleRef.current?.classList.remove("hidden");
+      document.body.classList.add("toggle");
     }
 
     setOnToggle((prev) => !prev);
@@ -52,20 +51,20 @@ export default function Header() {
   };
 
   const initShadowClassList = () => {
-    if (currentTheme === 'dark') {
-      headerRef.current?.classList.remove(shadowColor('light'));
-      headerRef.current?.classList.add(shadowColor('dark'));
+    if (currentTheme === "dark") {
+      headerRef.current?.classList.remove(shadowColor("light"));
+      headerRef.current?.classList.add(shadowColor("dark"));
     } else {
-      headerRef.current?.classList.remove(shadowColor('dark'));
-      headerRef.current?.classList.add(shadowColor('light'));
+      headerRef.current?.classList.remove(shadowColor("dark"));
+      headerRef.current?.classList.add(shadowColor("light"));
     }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     initShadowClassList();
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [theme]);
 
@@ -84,8 +83,6 @@ export default function Header() {
               <Nav type="normal" onClick={menuRouter} />
             </div>
             <div className="flex gap-5 maxSm:justify-end maxSm:w-full">
-              <KBarButton />
-
               <div className="flex flex-nowrap gap-2 items-center">
                 <button
                   type="button"
@@ -98,10 +95,10 @@ export default function Header() {
                   type="button"
                   className="m-0 p-0"
                   onClick={() => {
-                    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+                    setTheme(currentTheme === "dark" ? "light" : "dark");
                   }}
                 >
-                  {currentTheme === 'dark' ? <Moon /> : <Sun />}
+                  {currentTheme === "dark" ? <Moon /> : <Sun />}
                 </button>
               </div>
             </div>
