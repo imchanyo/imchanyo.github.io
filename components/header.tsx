@@ -7,7 +7,7 @@ import { Moon } from "~/components/icons/moon";
 import { Toggle } from "~/components/icons/toggle";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
-
+import KBarButton from '~/components/k-bar-button'
 export default function Header() {
   const headerRef = useRef<HTMLElement>(null);
   const router = useRouter();
@@ -91,6 +91,7 @@ export default function Header() {
                 >
                   <Toggle />
                 </button>
+                <KBarButton/>
                 <button
                   type="button"
                   className="m-0 p-0"

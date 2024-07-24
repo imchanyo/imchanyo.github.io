@@ -6,7 +6,8 @@ import GoogleAnalytics from "~/components/google-analytics";
 import siteConfig from "~/libs/site-config";
 import Header from "~/components/header";
 import Providers from "./providers";
-
+import { allWritings } from 'contentlayer/generated';
+import KBarProviders from '~/components/kbar-providers';
 export const metadata: Metadata = {
   title: {
     template: "%s | chanyoung",
@@ -55,13 +56,15 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
-          <Header />
-          <div className="container mx-auto max-w-page py-page min-h-screen">
-            <main className="max-w-screen-md flex flex-col px-10 m-auto">
-              {children}
-            </main>
-            <FloatScrollTopButton />
-          </div>
+        <KBarProviders allWritings={allWritings}>
+            <Header />
+            <div className="container mx-auto max-w-page py-page min-h-screen">
+              <main className="max-w-screen-md flex flex-col px-10 m-auto">
+                {children}
+              </main>
+              <FloatScrollTopButton />
+            </div>
+          </KBarProviders>
         </Providers>
       </body>
       {process.env.NODE_ENV === "production" && <GoogleAnalytics />}
