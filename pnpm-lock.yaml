@@ -26,6 +26,9 @@ dependencies:
   '@mui/material':
     specifier: ^5.15.3
     version: 5.15.3(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
+  '@netlify/plugin-nextjs':
+    specifier: ^5.9.3
+    version: 5.9.3
   autoprefixer:
     specifier: 10.4.14
     version: 10.4.14(postcss@8.4.25)
@@ -1111,6 +1114,11 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-is: 18.2.0
+    dev: false
+
+  /@netlify/plugin-nextjs@5.9.3:
+    resolution: {integrity: sha512-760YvPaw6tSPmmX/2sqRzqBehPOfTD6lJoUb+bW+yZhQNyfLyCJR9/cRQP0+fFN2CCmdRWECX4nbi76Qne5/FQ==}
+    engines: {node: '>=18.0.0'}
     dev: false
 
   /@next/env@13.4.9:
