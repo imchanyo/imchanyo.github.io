@@ -1,20 +1,20 @@
-import { allWritings } from 'contentlayer/generated';
-import Link from 'next/link';
+import { allWritings } from "contentlayer/generated";
+import Link from "next/link";
 
-import { GithubIcon, NotionIcon } from '~/components/icons/logo-icon';
-import { Badge } from '~/components/badge';
-import { categoryInfo } from '~/constant/post';
-import { rootUrl } from '~/libs/utils';
-import List from '~/components/list';
+import { GithubIcon, NotionIcon } from "~/components/icons/logo-icon";
+import { Badge } from "~/components/badge";
+import { categoryInfo } from "~/constant/post";
+import { rootUrl } from "~/libs/utils";
+import List from "~/components/list";
 
 export default function Home() {
   return (
     <div className="text-tx">
       <div className="md:flex gap-10">
         <div className="flex-1">
-          <h1 className="mb-7">ChanYoung KIM</h1>
+          {/* <h1 className="mb-7">ChanYoung KIM</h1> */}
 
-          <p
+          {/* <p
             data-animate
             data-animate-stage={1}
             className="leading-8 tracking-wide"
@@ -24,13 +24,13 @@ export default function Home() {
             저의 블로그에 와주셔서 진심으로 감사드립니다.
             <br />
             배움의 발자취를 기록하고 있습니다.
-          </p>
-          <p
+          </p> */}
+          {/* <p
             data-animate
             data-animate-stage={2}
             className="mt-7 leading-8 tracking-wide"
           >
-            현재{' '}
+            현재{" "}
             <Link
               href="https://megazone.digital/"
               target="_blank"
@@ -49,7 +49,7 @@ export default function Home() {
               web architecture
             </Link>
             를 담당하고 있습니다.
-          </p>
+          </p> */}
 
           <div data-animate data-animate-stage={2} className="mt-2 flex gap-2">
             <Link

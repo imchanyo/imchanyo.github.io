@@ -5,7 +5,7 @@ image: "/img/posts/tech.png"
 draft: false
 category: "project"
 subImage: "/img/posts/project.png"
-date: 2025-01-07 14:00:00
+date: 2025-02-22 14:00:00
 tags:
   - validation
   - yup
@@ -287,8 +287,6 @@ trim함수는 string타입일 경우만 사용되므로, 다른 타입과 다르
 
 ## useValid의 이점
 
-<div style={{ display: 'flex', gap: '10px' }}>
-
 ```typescript
 // --useValid 적용 전---
 const saveValidation = () => {
@@ -341,7 +339,6 @@ const saveForm = handleSubmit(async (params: AdministratorParams) => {
 });
 ```
 
-</div>
 기존에 if문으로 길게 작성되었던 로직을 제거하고, 위와같이 Action을 담당하는 함수에 runValidation함수만 호출해서 사용하면, 손쉽게 벨리데이션을 제어할 수 있게됩니다. 이로써 얻고자하는 이점은 다음과 같습니다.
 
 **1. 검증 로직의 분리화로 유지보수성 향상**
